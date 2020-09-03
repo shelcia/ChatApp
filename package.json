@@ -9,8 +9,10 @@
     "axios": "^0.20.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-emoji": "^0.5.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
+    "react-scroll-to-bottom": "^4.0.0",
     "react-toastify": "^6.0.8",
     "socket.io-client": "^2.3.0"
   },

@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./components/Login";
-import Dashboard from "./components/Dashboard";
+import Chat from "./components/Chat";
 
 const App = () => {
   return (
@@ -9,7 +9,7 @@ const App = () => {
       <Router>
         <Switch>
           <Route path="/" exact component={Login} />
-          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/chat" component={Chat} />
         </Switch>
       </Router>
     </React.Fragment>

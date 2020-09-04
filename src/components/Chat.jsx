@@ -7,8 +7,6 @@ import Messages from "./Messages";
 import InfoBar from "./InfoBar";
 import Input from "./Input";
 
-// import './Chat.css';
-
 let socket;
 
 const Chat = ({ location }) => {
@@ -17,7 +15,7 @@ const Chat = ({ location }) => {
   const [users, setUsers] = useState("");
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const ENDPOINT = "https://project-chat-application.herokuapp.com/";
+  const ENDPOINT = "localhost:8000";
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
@@ -53,17 +51,21 @@ const Chat = ({ location }) => {
   };
 
   return (
-    <div className="outerContainer">
-      <div className="container">
-        <InfoBar room={room} />
-        <Messages messages={messages} name={name} />
-        <Input
-          message={message}
-          setMessage={setMessage}
-          sendMessage={sendMessage}
-        />
+    <div className="container">
+      <div className="row">
+        <div className="col-sm-6 mt-5">
+          <InfoBar room={room} />
+          <Messages messages={messages} name={name} />
+          <Input
+            message={message}
+            setMessage={setMessage}
+            sendMessage={sendMessage}
+          />
+        </div>
+        <div className="col-sm-6">
+          <TextContainer users={users} />
+        </div>
       </div>
-      <TextContainer users={users} />
     </div>
   );
 };

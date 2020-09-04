@@ -1,7 +1,5 @@
 import React from "react";
 
-// import "./Message.css";
-
 import ReactEmoji from "react-emoji";
 
 const Message = ({ message: { text, user }, name }) => {
@@ -14,18 +12,21 @@ const Message = ({ message: { text, user }, name }) => {
   }
 
   return isSentByCurrentUser ? (
-    <div className="messageContainer justifyEnd">
-      <p className="sentText pr-10">{trimmedName}</p>
-      <div className="messageBox backgroundBlue">
-        <p className="messageText colorWhite">{ReactEmoji.emojify(text)}</p>
-      </div>
+    <div
+      className="btn btn-info mt-2 mb-2 text-right"
+      style={{
+        marginLeft: "100%",
+        transform: "translateX(-100%)",
+        minWidth: "100px",
+      }}
+    >
+      <p>{trimmedName}</p>
+      <h6>{ReactEmoji.emojify(text)}</h6>
     </div>
   ) : (
-    <div className="messageContainer justifyStart">
-      <div className="messageBox backgroundLight">
-        <p className="messageText colorDark">{ReactEmoji.emojify(text)}</p>
-      </div>
-      <p className="sentText pl-10 ">{user}</p>
+    <div className="btn btn-warning mt-2 mb-2 text-left">
+      <p>{user}</p>
+      <h6>{ReactEmoji.emojify(text)}</h6>
     </div>
   );
 };

@@ -1,19 +1,18 @@
 import React from "react";
 
-// import onlineIcon from '../../icons/onlineIcon.png';
-// import closeIcon from '../../icons/closeIcon.png';
-
-// import "./InfoBar.css";
-
 const InfoBar = ({ room }) => (
-  <div className="infoBar">
-    <div className="leftInnerContainer">
-      {/* <img className="onlineIcon" src={onlineIcon} alt="online icon" /> */}
-      <h3>{room}</h3>
+  <div className="row border">
+    <div className="col-sm-9">
+      <p>
+        Room : <em style={{ color: "dodgerblue" }}>{room}</em>
+      </p>
     </div>
-    <div className="rightInnerContainer">
-      {/* <a href="/"><img src={closeIcon} alt="close icon" /></a> */}
-      <a href="/">close</a>
+    <div className="col-sm-3">
+      <a href="/">
+        <button type="button" className="btn btn-danger">
+          close
+        </button>
+      </a>
     </div>
   </div>
 );

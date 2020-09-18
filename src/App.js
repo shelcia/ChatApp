@@ -1,18 +1,16 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import useLocalStorage from "./components/customHooks/useLocalStorage";
+import Dashboard from "./components/Dashboard";
+// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./components/Login";
-import Chat from "./components/Chat";
+// import Chat from "./components/Chat";
 import "./styles/style.css";
 
 const App = () => {
+  const [id, setId] = useLocalStorage("id");
   return (
     <React.Fragment>
-      <Router>
-        <Switch>
-          <Route path="/" exact component={Login} />
-          <Route path="/chat" component={Chat} />
-        </Switch>
-      </Router>
+      {id ? <Dashboard id={id} /> : <Login setId={setId} />}
     </React.Fragment>
   );
 };

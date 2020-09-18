@@ -1,12 +1,40 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useRef } from "react";
+import { Button, Container, Form } from "react-bootstrap";
+import { v4 as uuid4 } from "uuid";
 
-const Login = () => {
-  const [name, setName] = useState("");
-  const [room, setRoom] = useState("");
+const Login = ({ setId }) => {
+  const idRef = useRef("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setId(idRef.current.value);
+  };
+
+  const createNewId = () => {
+    setId(uuid4());
+  };
+
   return (
     <React.Fragment>
-      <div className="container mt-5">
+      <Container className="mt-5">
+        <Form onSubmit={handleSubmit}>
+          <Form.Group>
+            <Form.Label>Enter your Id</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="enter your id"
+              ref={idRef}
+              required
+            ></Form.Control>
+          </Form.Group>
+          <Button type="submit">Login</Button>
+          <Button className="ml-2" onClick={createNewId}>
+            Create a new user ID
+          </Button>
+        </Form>
+      </Container>
+
+      {/* <div className="container mt-5">
         <h2 className="text-center mb-3">Join React Chat App</h2>
         <form>
           <input
@@ -34,7 +62,7 @@ const Login = () => {
             </div>
           </Link>
         </form>
-      </div>
+      </div> */}
     </React.Fragment>
   );
 };

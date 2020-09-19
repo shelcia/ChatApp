@@ -17,7 +17,7 @@ const NewContactModal = ({ closeModal }) => {
   return (
     <React.Fragment>
       <Modal.Header closeButton>
-        <h4>Contact</h4>
+        <h4>Contacts</h4>
       </Modal.Header>
       <Modal.Body>
         <Form onSubmit={handleSubmit}>

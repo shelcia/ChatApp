@@ -1,5 +1,7 @@
 import React from "react";
 import { ContactsProvider } from "./components/Context/ContactsProvider";
+import { ChatsProvider } from "./components/Context/ChatsProvider";
+
 import useLocalStorage from "./components/customHooks/useLocalStorage";
 import Dashboard from "./components/Dashboard";
 // import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -11,7 +13,9 @@ const App = () => {
   return (
     <React.Fragment>
       <ContactsProvider>
-        {id ? <Dashboard id={id} /> : <Login setId={setId} />}
+        <ChatsProvider>
+          {id ? <Dashboard id={id} /> : <Login setId={setId} />}
+        </ChatsProvider>
       </ContactsProvider>
     </React.Fragment>
   );

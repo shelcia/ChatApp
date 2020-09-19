@@ -18,7 +18,7 @@ export const ChatsProvider = ({ children }) => {
   //ADDING NAMES TO CONTACT IF PRESENT
 
   const formattedChats = chats.map((chat) => {
-    const recipients = chat.recipients((recipient) => {
+    const recipients = chat.recipients.map((recipient) => {
       const contact = contacts.find((contact) => {
         return contact.id === recipient;
       });

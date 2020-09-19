@@ -1,17 +1,18 @@
 import React, { useContext } from "react";
 import { ListGroup } from "react-bootstrap";
-import { ChatContext } from "../Context/ContactsProvider";
+import { ChatsContext } from "../Context/ChatsProvider";
 
 const Chats = () => {
-  const { chats } = useContext(ChatContext);
-  console.log(chats);
+  const { formattedChats } = useContext(ChatsContext);
 
   return (
     <React.Fragment>
       <ListGroup variant="flush">
-        {/* {chats.map((chat) => (
-          <ListGroup.Item key={chat.id}>{contact.name}</ListGroup.Item>
-        ))} */}
+        {formattedChats.map((chat, index) => (
+          <ListGroup.Item key={index}>
+            {chat.recipients.map((recipients) => recipients.name).join(", ")}
+          </ListGroup.Item>
+        ))}
       </ListGroup>
     </React.Fragment>
   );

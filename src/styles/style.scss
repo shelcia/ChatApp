@@ -1,3 +1,90 @@
+$linearGradient: linear-gradient(toRight, #d64bff, #ffacbf);
+$bg: #edeaff;
+$white: rgba(255, 255, 255, 0.6);
+$hover: #fff;
+$black: rgb(0, 0, 0);
+$font-large: 1.5rem;
+$font-medium: 1.2rem;
+$font-small: 1rem;
+$font-smaller: 0.8rem;
+
 * {
   font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: $bg !important;
+}
+a,
+a:visited,
+a:any-link {
+  text-decoration: none;
+}
+
+@mixin displayFlex($justify, $align) {
+  display: grid;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.container {
+  // border: 1px solid green;
+  height: 85vh;
+  border-radius: 1rem;
+  background-color: $white;
+  .row {
+    .col-sm-4 {
+      position: relative;
+      height: 80vh;
+      margin-top: 2vh;
+      .nav-tabs,
+      .nav-tabs .nav-link {
+        border: none;
+      }
+      .nav-tabs .nav-link:focus,
+      .nav-tabs .nav-link:hover {
+        outline: none;
+        border: none;
+      }
+      .nav-tabs .nav-item.show .nav-link,
+      .nav-tabs .nav-link.active {
+        color: $black;
+        background-color: $white;
+        border-radius: 50ex;
+        border: none;
+      }
+      .bottom {
+        position: absolute;
+        bottom: 0px;
+        @include displayFlex(center, center);
+        span {
+          font-size: $font-smaller;
+        }
+      }
+      .tab-content {
+        .list-group {
+          margin-top: 5px;
+          .list-group-item {
+            margin: 3px 2px;
+            border-radius: 5px;
+            color: $black;
+            border: none;
+            transition: all 0.2s ease-in;
+            background-color: $white;
+            cursor: pointer;
+            &:hover {
+              background-color: $hover;
+              transform: scale(1.03);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 90% !important;
+  }
 }

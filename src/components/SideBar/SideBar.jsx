@@ -37,12 +37,15 @@ const SideBar = ({ id }) => {
             <ContactsList />
           </Tab.Pane>
         </Tab.Content>
-        <div>
-          id:<span>{id}</span>
+        <div className="bottom">
+          <span className="mb-3">
+            <b>id:</b>
+            {id}
+          </span>
+          <Button onClick={() => setIsModalOpen(true)}>
+            New {activeTabName}
+          </Button>
         </div>
-        <Button onClick={() => setIsModalOpen(true)}>
-          New {activeTabName}
-        </Button>
       </Tab.Container>
       <Modal show={isModalOpen} onHide={closeModal}>
         {activeTabName === "Chat" ? (

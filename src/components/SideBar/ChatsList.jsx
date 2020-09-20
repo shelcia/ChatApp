@@ -3,13 +3,18 @@ import { ListGroup } from "react-bootstrap";
 import { ChatsContext } from "../Context/ChatsProvider";
 
 const Chats = () => {
-  const { formattedChats } = useContext(ChatsContext);
+  const { formattedChats, setSelectedChatIndex } = useContext(ChatsContext);
 
   return (
     <React.Fragment>
       <ListGroup variant="flush">
         {formattedChats.map((chat, index) => (
-          <ListGroup.Item key={index}>
+          <ListGroup.Item
+            key={index}
+            action
+            active={chat.selected}
+            onClick={() => setSelectedChatIndex(index)}
+          >
             {chat.recipients.map((recipients) => recipients.name).join(", ")}
           </ListGroup.Item>
         ))}

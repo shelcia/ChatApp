@@ -10,10 +10,11 @@ import "./styles/style.css";
 
 const App = () => {
   const [id, setId] = useLocalStorage("id");
+
   return (
     <React.Fragment>
       <ContactsProvider>
-        <ChatsProvider>
+        <ChatsProvider id={id}>
           {id ? <Dashboard id={id} /> : <Login setId={setId} />}
         </ChatsProvider>
       </ContactsProvider>

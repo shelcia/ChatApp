@@ -25,15 +25,42 @@ a:any-link {
 }
 
 .container {
+  border: 1px solid red;
   height: 85vh;
   border-radius: 1rem;
   background-color: rgba(255, 255, 255, 0.6);
 }
 
+.container .row .col-sm-8 {
+  border: 1px solid green;
+}
+
+.container .row .col-sm-8 .chat-text {
+  border: 1px solid coral;
+  height: 70vh;
+  overflow-y: scroll;
+}
+
+.container .row .col-sm-8 .bottom {
+  border: 1px solid cyan;
+  position: absolute;
+  bottom: 0px;
+  width: 90%;
+}
+
+.container .row .col-sm-8 .bottom span {
+  font-size: 0.8rem;
+}
+
 .container .row .col-sm-4 {
+  border: 1px solid blue;
   position: relative;
-  height: 80vh;
-  margin-top: 2vh;
+  height: 84vh;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  background-color: rgba(255, 255, 255, 0.6);
+  -webkit-box-shadow: 0px 3px 6px #00000005;
+          box-shadow: 0px 3px 6px #00000005;
 }
 
 .container .row .col-sm-4 .nav-tabs,
@@ -56,6 +83,7 @@ a:any-link {
 }
 
 .container .row .col-sm-4 .bottom {
+  border: 1px solid brown;
   position: absolute;
   bottom: 0px;
   display: -ms-grid;
@@ -73,7 +101,7 @@ a:any-link {
 }
 
 .container .row .col-sm-4 .tab-content .list-group {
-  margin-top: 5px;
+  padding-top: 5px;
 }
 
 .container .row .col-sm-4 .tab-content .list-group .list-group-item {

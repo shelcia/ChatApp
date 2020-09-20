@@ -4,7 +4,7 @@ import { ContactsContext } from "../Context/ContactsProvider";
 
 const Contacts = () => {
   const { contacts } = useContext(ContactsContext);
-  console.log(contacts);
+  console.table(contacts);
 
   return (
     <React.Fragment>

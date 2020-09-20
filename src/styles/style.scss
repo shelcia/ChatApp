@@ -27,16 +27,41 @@ a:any-link {
   align-items: $align;
 }
 
+@mixin borderStyle($color) {
+  border: 1px solid $color;
+}
+
 .container {
-  // border: 1px solid green;
+  @include borderStyle(red);
   height: 85vh;
   border-radius: 1rem;
   background-color: $white;
   .row {
+    .col-sm-8 {
+      @include borderStyle(green);
+      .chat-text {
+        @include borderStyle(coral);
+        height: 70vh;
+        overflow-y: scroll;
+      }
+      .bottom {
+        @include borderStyle(cyan);
+        position: absolute;
+        bottom: 0px;
+        width: 90%;
+        span {
+          font-size: $font-smaller;
+        }
+      }
+    }
     .col-sm-4 {
+      @include borderStyle(blue);
       position: relative;
-      height: 80vh;
-      margin-top: 2vh;
+      height: 84vh;
+      padding-top: 2vh;
+      padding-bottom: 2vh;
+      background-color: $white;
+      box-shadow: 0px 3px 6px #00000005;
       .nav-tabs,
       .nav-tabs .nav-link {
         border: none;
@@ -54,6 +79,7 @@ a:any-link {
         border: none;
       }
       .bottom {
+        @include borderStyle(brown);
         position: absolute;
         bottom: 0px;
         @include displayFlex(center, center);
@@ -63,7 +89,7 @@ a:any-link {
       }
       .tab-content {
         .list-group {
-          margin-top: 5px;
+          padding-top: 5px;
           .list-group-item {
             margin: 3px 2px;
             border-radius: 5px;

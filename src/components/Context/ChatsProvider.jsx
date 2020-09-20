@@ -29,9 +29,22 @@ export const ChatsProvider = ({ id, children }) => {
       const name = (contact && contact.name) || recipient;
       return { id: recipient, name };
     });
+
+    console.table(chat.messages);
+
+    const messages = chat.messages.map((message) => {
+      const contact = contacts.find((contact) => {
+        return contact.id === message.sender;
+      });
+      const name = (contact && contact.name) || message.sender;
+      const fromMe = id === message.sender;
+      return { ...message, sender: name, fromMe };
+    });
+
     //THE CHAT WHICH IS BEING SELECTED
-    const selected = index === selectedChatIndex;
-    return { ...chat, recipients, selected };
+    const selected = index === selectedChatIndex; //RETURNS BOOLEAN
+    return { ...chat, messages, recipients, selected };
+    // return { ...chat, recipients, selected };
   });
 
   const addMessageToChat = useCallback(
@@ -62,6 +75,7 @@ export const ChatsProvider = ({ id, children }) => {
   );
 
   const sendMessage = (selectedChat, message) => {
+    console.log(message);
     addMessageToChat({ selectedChat, message, sender: id });
   };
 

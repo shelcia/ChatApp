@@ -20,40 +20,42 @@ const SideBar = ({ id }) => {
 
   return (
     <React.Fragment>
-      <Tab.Container activeKey={activeKey} onSelect={setActiveKey}>
-        <Nav variant="tabs">
-          <Nav.Item>
-            <Nav.Link eventKey={CHAT_KEY}>Chats</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link eventKey={CONTACTS_KEY}>Contacts</Nav.Link>
-          </Nav.Item>
-        </Nav>
-        <Tab.Content>
-          <Tab.Pane eventKey={CHAT_KEY}>
-            <ChatsList />
-          </Tab.Pane>
-          <Tab.Pane eventKey={CONTACTS_KEY}>
-            <ContactsList />
-          </Tab.Pane>
-        </Tab.Content>
-        <div className="bottom">
-          <span className="mb-3">
-            <b>id:</b>
-            {id}
-          </span>
-          <Button onClick={() => setIsModalOpen(true)}>
-            New {activeTabName}
-          </Button>
-        </div>
-      </Tab.Container>
-      <Modal show={isModalOpen} onHide={closeModal}>
-        {activeTabName === "Chat" ? (
-          <NewChatModal closeModal={closeModal} />
-        ) : (
-          <NewContactModal closeModal={closeModal} />
-        )}
-      </Modal>
+      <div className="sidebar">
+        <Tab.Container activeKey={activeKey} onSelect={setActiveKey}>
+          <Nav variant="tabs">
+            <Nav.Item>
+              <Nav.Link eventKey={CHAT_KEY}>Chats</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey={CONTACTS_KEY}>Contacts</Nav.Link>
+            </Nav.Item>
+          </Nav>
+          <Tab.Content>
+            <Tab.Pane eventKey={CHAT_KEY}>
+              <ChatsList />
+            </Tab.Pane>
+            <Tab.Pane eventKey={CONTACTS_KEY}>
+              <ContactsList />
+            </Tab.Pane>
+          </Tab.Content>
+          <div className="bottom">
+            <span className="mb-3">
+              <b>id: </b>
+              {id}
+            </span>
+            <Button onClick={() => setIsModalOpen(true)} className="button">
+              New {activeTabName}
+            </Button>
+          </div>
+        </Tab.Container>
+        <Modal show={isModalOpen} onHide={closeModal}>
+          {activeTabName === "Chat" ? (
+            <NewChatModal closeModal={closeModal} />
+          ) : (
+            <NewContactModal closeModal={closeModal} />
+          )}
+        </Modal>
+      </div>
     </React.Fragment>
   );
 };

@@ -19,7 +19,7 @@ const OpenChat = () => {
   );
 
   console.table(formattedChats);
-  console.log(chosenEmoji);
+  console.log(message);
 
   const onEmojiClick = (event, emojiObject) => {
     setChosenEmoji(emojiObject);
@@ -36,25 +36,24 @@ const OpenChat = () => {
 
   return (
     <React.Fragment>
-      <div className="flex-grow-1 overflow-auto chat-text">
+      <div className="chat-text-container">
         {typeof selectedChat !== "undefined" && (
-          <div className="d-flex flex-column align-items-start justify-content-end px-3 ">
+          <div className="chat-text">
             {selectedChat.messages.map((message, index) => {
               const lastMessage = selectedChat.messages.length - 1 === index;
               return (
                 <div
                   ref={lastMessage ? setRef : null}
                   key={index}
-                  className={`my-1 d-flex flex-column ${
-                    message.fromMe
-                      ? "align-self-end align-items-end"
-                      : "align-items-start"
+                  className={`text${
+                    message.fromMe ? "-sameUser" : "-diffUser"
                   }`}
                 >
                   <div
-                    className={`rounded px-2 py-1 ${
-                      message.fromMe ? "bg-primary text-white" : "border"
-                    }`}
+                    // className={`message ${
+                    //   message.fromMe ? "-sameUser" : "border"
+                    // }`}
+                    className="message"
                   >
                     {message.message}
                   </div>
@@ -72,37 +71,34 @@ const OpenChat = () => {
         )}
       </div>
       <Form onSubmit={handleSubmit} className="bottom">
-        {showEmojiBoard && <Picker onEmojiClick={onEmojiClick} />}
+        {showEmojiBoard && (
+          <Picker
+            onEmojiClick={onEmojiClick}
+            onClick={() =>
+              setMessage((prevMessage) => prevMessage.concat(chosenEmoji.emoji))
+            }
+          />
+        )}
         {chosenEmoji ? <span>You chose: {chosenEmoji.emoji}</span> : null}
-        {/* {chosenEmoji ? setMessage(chosenEmoji.emoji) : null} */}
-        {/* <Picker onEmojiClick={onEmojiClick} /> */}
         <Form.Group>
           <InputGroup>
             <Form.Control
               type="text"
               placeholder="enter your message"
-              // as="text"
               required
               value={message}
               onChange={(event) => setMessage(event.target.value)}
             ></Form.Control>
-            <i
-              style={{
-                fontSize: "24px",
-                display: "flex",
-                alignItems: "center",
-                padding: "0px 10px",
-                color: "white",
-                backgroundColor: "#007bff",
-                cursor: "pointer",
-              }}
-              className="fa"
+            <Button
+              className="fa button"
               onClick={() => setShowEmojiBoard(!showEmojiBoard)}
             >
               &#xf118;
-            </i>
+            </Button>
             <InputGroup.Append>
-              <Button type="submit"> Send</Button>
+              <Button type="submit" className="button">
+                Send
+              </Button>
             </InputGroup.Append>
           </InputGroup>
         </Form.Group>

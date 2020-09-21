@@ -1,5 +1,5 @@
 $linearGradient: linear-gradient(toRight, #d64bff, #ffacbf);
-$bg: #edeaff;
+$bg: rgba(255, 232, 183, 0.666);
 $white: rgba(255, 255, 255, 0.6);
 $hover: #fff;
 $black: rgb(0, 0, 0);
@@ -7,6 +7,11 @@ $font-large: 1.5rem;
 $font-medium: 1.2rem;
 $font-small: 1rem;
 $font-smaller: 0.8rem;
+$primary: rgb(255, 216, 62);
+$secondary: rgb(255, 145, 10);
+$darkSecondary: rgb(225, 125, 3);
+$focusArea: 0 0 0 0.2rem rgba(255, 145, 10, 0.5);
+$noopacity: rgba(0, 0, 0, 0);
 
 * {
   font-family: "Poppins", sans-serif;
@@ -15,14 +20,41 @@ $font-smaller: 0.8rem;
 body {
   background-color: $bg !important;
 }
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: $noopacity;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primary;
+  border-radius: 0.25rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $secondary;
+  width: 5px;
+}
 a,
 a:visited,
 a:any-link {
   text-decoration: none;
+  color: $secondary;
+  transition: all 0.2s ease-in;
+  &:hover {
+    color: $darkSecondary;
+  }
+  &:active {
+    color: $hover;
+  }
 }
 
 @mixin displayFlex($justify, $align) {
-  display: grid;
+  display: flex;
   justify-content: $justify;
   align-items: $align;
 }
@@ -31,76 +63,144 @@ a:any-link {
   border: 1px solid $color;
 }
 
+button.button {
+  background-color: $secondary !important;
+  border-color: $secondary;
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $darkSecondary !important;
+    border-color: $darkSecondary;
+  }
+  &:focus {
+    box-shadow: $focusArea;
+  }
+}
+
 .container {
-  @include borderStyle(red);
   height: 85vh;
   border-radius: 1rem;
   background-color: $white;
+  box-shadow: 5px 5px 5px #00000005;
   .row {
     .col-sm-8 {
-      @include borderStyle(green);
-      .chat-text {
-        @include borderStyle(coral);
+      height: 85vh;
+      .chat-text-container {
+        flex-grow: 1 !important;
         height: 70vh;
-        overflow-y: scroll;
+        overflow: auto;
+        .chat-text {
+          padding: 0px 1rem;
+          @include displayFlex(flex-end, flex-start);
+          flex-direction: column;
+          .text-sameUser,
+          .text-diffUser {
+            margin: 0.25rem 0rem;
+            flex-direction: column;
+            .message {
+              border-radius: 0.25rem !important;
+              padding: 0.25rem 0.5rem;
+            }
+          }
+          .text-sameUser {
+            @include displayFlex(center, flex-end);
+            align-self: flex-end !important;
+            .message {
+              background-color: $primary;
+            }
+          }
+          .text-diffUser {
+            @include displayFlex(center, flex-start);
+            .message {
+              background-color: $hover;
+            }
+          }
+        }
       }
       .bottom {
-        @include borderStyle(cyan);
         position: absolute;
         bottom: 0px;
-        width: 90%;
+        width: 100%;
+        left: 0px;
+        padding: 0rem 1rem;
+        padding-top: 1rem;
+        background-color: $white;
         span {
           font-size: $font-smaller;
+        }
+        .form-control {
+          border: 1px solid $noopacity;
+          &:focus {
+            box-shadow: $focusArea;
+          }
         }
       }
     }
     .col-sm-4 {
-      @include borderStyle(blue);
+      border-top-left-radius: 1rem;
+      border-bottom-left-radius: 1rem;
+      height: 85vh;
       position: relative;
-      height: 84vh;
       padding-top: 2vh;
       padding-bottom: 2vh;
-      background-color: $white;
+      background-color: $primary;
       box-shadow: 0px 3px 6px #00000005;
-      .nav-tabs,
-      .nav-tabs .nav-link {
-        border: none;
-      }
-      .nav-tabs .nav-link:focus,
-      .nav-tabs .nav-link:hover {
-        outline: none;
-        border: none;
-      }
-      .nav-tabs .nav-item.show .nav-link,
-      .nav-tabs .nav-link.active {
-        color: $black;
-        background-color: $white;
-        border-radius: 50ex;
-        border: none;
-      }
-      .bottom {
-        @include borderStyle(brown);
-        position: absolute;
-        bottom: 0px;
-        @include displayFlex(center, center);
-        span {
-          font-size: $font-smaller;
-        }
-      }
-      .tab-content {
-        .list-group {
-          padding-top: 5px;
-          .list-group-item {
-            margin: 3px 2px;
-            border-radius: 5px;
-            color: $black;
+      .sidebar {
+        height: 80vh;
+        .nav-tabs,
+        .nav-tabs .nav-link {
+          border: none;
+          &:hover,
+          &:focus {
+            outline: none;
             border: none;
-            transition: all 0.2s ease-in;
-            background-color: $white;
-            cursor: pointer;
-            &:hover {
+          }
+        }
+        .nav-tabs .nav-item.show .nav-link,
+        .nav-tabs .nav-link.active {
+          color: $black;
+          background-color: $white;
+          border-radius: 50ex;
+          border: none;
+        }
+        .bottom {
+          width: 100%;
+          border-bottom-left-radius: 1rem;
+          padding: 0.75rem 0rem;
+          position: absolute;
+          bottom: 0rem;
+          left: 0px;
+          background-color: $white;
+          @include displayFlex(center, center);
+          flex-direction: column;
+          span {
+            font-size: $font-smaller;
+          }
+          button {
+            width: 90%;
+          }
+        }
+        .tab-content {
+          .list-group {
+            padding-top: 5px;
+            .list-group-item {
+              margin: 3px 2px;
+              border-radius: 5px;
+              color: $black;
+              border: none;
+              transition: all 0.2s ease-in;
+              background-color: $white;
+              cursor: pointer;
+              &:hover,
+              &:active {
+                background-color: $hover;
+                transform: scale(1.03);
+                border: none;
+              }
+            }
+            .list-group-item.active {
               background-color: $hover;
-              transform: scale(1.03);
+              border: none;
             }
           }
         }

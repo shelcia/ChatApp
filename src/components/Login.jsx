@@ -31,7 +31,7 @@ export default function Login({ onIdSubmit }) {
                 type="text"
                 ref={idRef}
                 required
-                placeholder="enter id"
+                placeholder="Enter ID"
               />
             </Form.Group>
             <Button type="submit" className="mr-2 button">

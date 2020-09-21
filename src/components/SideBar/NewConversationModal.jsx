@@ -29,7 +29,7 @@ export default function NewConversationModal({ closeModal }) {
 
   return (
     <>
-      <Modal.Header closeButton>Create Conversation</Modal.Header>
+      <Modal.Header closeButton>Create Chat</Modal.Header>
       <Modal.Body>
         <Form onSubmit={handleSubmit}>
           {contacts.map((contact) => (
@@ -42,7 +42,11 @@ export default function NewConversationModal({ closeModal }) {
               />
             </Form.Group>
           ))}
-          <Button type="submit">Create</Button>
+          <div className="text-center">
+            <Button type="submit" className="button w-100">
+              Create
+            </Button>
+          </div>
         </Form>
       </Modal.Body>
     </>

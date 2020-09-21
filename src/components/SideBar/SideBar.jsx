@@ -47,7 +47,7 @@ export default function Sidebar({ id }) {
         <div className="bottom">
           Your Id: <span className="text-muted">{id}</span>
           <Button onClick={() => setModalOpen(true)} className="button">
-            New {conversationsOpen ? "Conversation" : "Contact"}
+            New {conversationsOpen ? "Chat" : "Contact"}
           </Button>
         </div>
       </Tab.Container>

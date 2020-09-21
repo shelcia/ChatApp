@@ -1,37 +1,35 @@
-import React, { useContext, useState } from "react";
-import { Form, Modal, Button } from "react-bootstrap";
-import { ContactsContext } from "../Context/ContactsProvider";
-import { ChatsContext } from "../Context/ChatsProvider";
+import React, { useState } from "react";
+import { Modal, Form, Button } from "react-bootstrap";
+import { useContacts } from "../Context/ContactsProvider";
+import { useConversations } from "../Context/ConversationsProvider";
 
-const NewChattModal = ({ closeModal }) => {
+export default function NewConversationModal({ closeModal }) {
   const [selectedContactIds, setSelectedContactIds] = useState([]);
+  const { contacts } = useContacts();
+  const { createConversation } = useConversations();
 
-  const { contacts } = useContext(ContactsContext);
-  const { createChats } = useContext(ChatsContext);
+  function handleSubmit(e) {
+    e.preventDefault();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    createChats(selectedContactIds);
+    createConversation(selectedContactIds);
     closeModal();
-  };
+  }
 
-  const handleCheckBox = (contactId) => {
+  function handleCheckboxChange(contactId) {
     setSelectedContactIds((prevSelectedContactIds) => {
       if (prevSelectedContactIds.includes(contactId)) {
         return prevSelectedContactIds.filter((prevId) => {
-          return prevId !== contactId;
+          return contactId !== prevId;
         });
       } else {
         return [...prevSelectedContactIds, contactId];
       }
     });
-  };
+  }
 
   return (
-    <React.Fragment>
-      <Modal.Header closeButton>
-        <h4>Chats</h4>
-      </Modal.Header>
+    <>
+      <Modal.Header closeButton>Create Conversation</Modal.Header>
       <Modal.Body>
         <Form onSubmit={handleSubmit}>
           {contacts.map((contact) => (
@@ -40,16 +38,13 @@ const NewChattModal = ({ closeModal }) => {
                 type="checkbox"
                 value={selectedContactIds.includes(contact.id)}
                 label={contact.name}
-                onChange={() => handleCheckBox(contact.id)}
-              ></Form.Check>
+                onChange={() => handleCheckboxChange(contact.id)}
+              />
             </Form.Group>
           ))}
-
           <Button type="submit">Create</Button>
         </Form>
       </Modal.Body>
-    </React.Fragment>
+    </>
   );
-};
-
-export default NewChattModal;
+}

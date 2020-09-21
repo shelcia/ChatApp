@@ -166,6 +166,7 @@ button.button:focus {
 
 .container .row .col-sm-8 .chat-text-container .chat-text {
   padding: 0px 1rem;
+  padding-top: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

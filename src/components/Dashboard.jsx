@@ -1,24 +1,24 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Row } from "react-bootstrap";
-import SideBar from "./SideBar/SideBar";
-import { ChatsContext } from "../components/Context/ChatsProvider";
-import OpenChat from "./Chat/OpenChat";
+import Sidebar from "../components/SideBar/SideBar";
+import OpenConversation from "../components/Chat/OpenConversation";
+import { useConversations } from "../components/Context/ConversationsProvider";
 
-const Dashboard = ({ id }) => {
-  const { setSelectedChatIndex } = useContext(ChatsContext);
+export default function Dashboard({ id }) {
+  const { selectedConversation } = useConversations();
 
   return (
     <React.Fragment>
       <div className="container mt-5">
         <Row>
           <div className="col-sm-4">
-            <SideBar id={id} />
+            <Sidebar id={id} />
           </div>
-          <div className="col-sm-8">{setSelectedChatIndex && <OpenChat />}</div>
+          <div className="col-sm-8">
+            {selectedConversation && <OpenConversation />}
+          </div>
         </Row>
       </div>
     </React.Fragment>
   );
-};
-
-export default Dashboard;
+}

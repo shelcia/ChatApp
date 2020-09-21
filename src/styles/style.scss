@@ -114,6 +114,7 @@ button.button {
         overflow: auto;
         .chat-text {
           padding: 0px 1rem;
+          padding-top: 1rem;
           @include displayFlex(flex-end, flex-start);
           flex-direction: column;
           .text-sameUser,

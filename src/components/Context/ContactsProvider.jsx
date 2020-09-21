@@ -1,22 +1,24 @@
-import React, { createContext } from "react";
+import React, { useContext } from "react";
 import useLocalStorage from "../customHooks/useLocalStorage";
 
-export const ContactsContext = createContext();
+const ContactsContext = React.createContext();
 
-export const ContactsProvider = ({ children }) => {
+export function useContacts() {
+  return useContext(ContactsContext);
+}
+
+export function ContactsProvider({ children }) {
   const [contacts, setContacts] = useLocalStorage("contacts", []);
 
-  const createContact = (id, name) => {
-    setContacts((prevContact) => {
-      return [...prevContact, { id, name }];
+  function createContact(id, name) {
+    setContacts((prevContacts) => {
+      return [...prevContacts, { id, name }];
     });
-  };
+  }
 
   return (
-    <React.Fragment>
-      <ContactsContext.Provider value={{ contacts, createContact }}>
-        {children}
-      </ContactsContext.Provider>
-    </React.Fragment>
+    <ContactsContext.Provider value={{ contacts, createContact }}>
+      {children}
+    </ContactsContext.Provider>
   );
-};
+}

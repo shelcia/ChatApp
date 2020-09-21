@@ -1,12 +1,15 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import io from "socket.io-client";
 
-export const SocketContext = createContext();
+const SocketContext = React.createContext();
 
-export const SocketProvider = ({ id, children }) => {
+export function useSocket() {
+  return useContext(SocketContext);
+}
+
+export function SocketProvider({ id, children }) {
   const [socket, setSocket] = useState();
-  const ENDPOINT = "http://localhost:4000";
-  // const ENDPOINT = "https://whatsapp-clone-server-nodejs.herokuapp.com/";
+  const ENDPOINT = "http://localhost:5000";
 
   useEffect(() => {
     const newSocket = io(ENDPOINT, { query: { id } });
@@ -16,10 +19,6 @@ export const SocketProvider = ({ id, children }) => {
   }, [id]);
 
   return (
-    <React.Fragment>
-      <SocketContext.Provider value={{ socket }}>
-        {children}
-      </SocketContext.Provider>
-    </React.Fragment>
+    <SocketContext.Provider value={socket}>{children}</SocketContext.Provider>
   );
-};
+}

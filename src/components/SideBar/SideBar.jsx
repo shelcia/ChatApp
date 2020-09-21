@@ -1,71 +1,64 @@
 import React, { useState } from "react";
 import { Tab, Nav, Button, Modal } from "react-bootstrap";
-import ContactsList from "./ContactsList";
-import ChatsList from "./ChatsList";
-import NewChatModal from "./NewChatModal";
+import Conversations from "./Conversations";
+import Contacts from "./Contacts";
+import Setting from "./Setting";
 import NewContactModal from "./NewContactModal";
-import Settings from "./Setting";
+import NewConversationModal from "./NewConversationModal";
 
-const CHAT_KEY = "chats";
+const CONVERSATIONS_KEY = "conversations";
 const CONTACTS_KEY = "contacts";
 const SETTINGS_KEY = "settings";
 
-const SideBar = ({ id }) => {
-  const [activeKey, setActiveKey] = useState(CHAT_KEY);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+export default function Sidebar({ id }) {
+  const [activeKey, setActiveKey] = useState(CONVERSATIONS_KEY);
+  const [modalOpen, setModalOpen] = useState(false);
+  const conversationsOpen = activeKey === CONVERSATIONS_KEY;
 
-  const activeTabName = activeKey === CHAT_KEY ? "Chat" : "Contact";
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+  function closeModal() {
+    setModalOpen(false);
+  }
 
   return (
-    <React.Fragment>
-      <div className="sidebar">
-        <Tab.Container activeKey={activeKey} onSelect={setActiveKey}>
-          <Nav variant="tabs">
-            <Nav.Item>
-              <Nav.Link eventKey={CHAT_KEY}>Chats</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey={CONTACTS_KEY}>Contacts</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey={SETTINGS_KEY}>Settings</Nav.Link>
-            </Nav.Item>
-          </Nav>
-          <Tab.Content>
-            <Tab.Pane eventKey={CHAT_KEY}>
-              <ChatsList />
-            </Tab.Pane>
-            <Tab.Pane eventKey={CONTACTS_KEY}>
-              <ContactsList />
-            </Tab.Pane>
-            <Tab.Pane eventKey={SETTINGS_KEY}>
-              <Settings />
-            </Tab.Pane>
-          </Tab.Content>
-          <div className="bottom">
-            <span className="mb-3">
-              <b>id: </b>
-              {id}
-            </span>
-            <Button onClick={() => setIsModalOpen(true)} className="button">
-              New {activeTabName}
-            </Button>
-          </div>
-        </Tab.Container>
-        <Modal show={isModalOpen} onHide={closeModal}>
-          {activeTabName === "Chat" ? (
-            <NewChatModal closeModal={closeModal} />
-          ) : (
-            <NewContactModal closeModal={closeModal} />
-          )}
-        </Modal>
-      </div>
-    </React.Fragment>
-  );
-};
+    <div className="sidebar">
+      <Tab.Container activeKey={activeKey} onSelect={setActiveKey}>
+        <Nav variant="tabs">
+          <Nav.Item>
+            <Nav.Link eventKey={CONVERSATIONS_KEY}>Chats</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey={CONTACTS_KEY}>Contacts</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey={SETTINGS_KEY}>Settings</Nav.Link>
+          </Nav.Item>
+        </Nav>
+        <Tab.Content>
+          <Tab.Pane eventKey={CONVERSATIONS_KEY}>
+            <Conversations />
+          </Tab.Pane>
+          <Tab.Pane eventKey={CONTACTS_KEY}>
+            <Contacts />
+          </Tab.Pane>
+          <Tab.Pane eventKey={SETTINGS_KEY}>
+            <Setting />
+          </Tab.Pane>
+        </Tab.Content>
+        <div className="bottom">
+          Your Id: <span className="text-muted">{id}</span>
+          <Button onClick={() => setModalOpen(true)} className="button">
+            New {conversationsOpen ? "Conversation" : "Contact"}
+          </Button>
+        </div>
+      </Tab.Container>
 
-export default SideBar;
+      <Modal show={modalOpen} onHide={closeModal}>
+        {conversationsOpen ? (
+          <NewConversationModal closeModal={closeModal} />
+        ) : (
+          <NewContactModal closeModal={closeModal} />
+        )}
+      </Modal>
+    </div>
+  );
+}

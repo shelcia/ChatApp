@@ -5,8 +5,8 @@ export const SocketContext = createContext();
 
 export const SocketProvider = ({ id, children }) => {
   const [socket, setSocket] = useState();
-  // const ENDPOINT = "http://localhost:4000";
-  const ENDPOINT = "https://whatsapp-clone-server-nodejs.herokuapp.com/";
+  const ENDPOINT = "http://localhost:4000";
+  // const ENDPOINT = "https://whatsapp-clone-server-nodejs.herokuapp.com/";
 
   useEffect(() => {
     const newSocket = io(ENDPOINT, { query: { id } });

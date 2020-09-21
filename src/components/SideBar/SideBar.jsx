@@ -4,9 +4,11 @@ import ContactsList from "./ContactsList";
 import ChatsList from "./ChatsList";
 import NewChatModal from "./NewChatModal";
 import NewContactModal from "./NewContactModal";
+import Settings from "./Setting";
 
 const CHAT_KEY = "chats";
 const CONTACTS_KEY = "contacts";
+const SETTINGS_KEY = "settings";
 
 const SideBar = ({ id }) => {
   const [activeKey, setActiveKey] = useState(CHAT_KEY);
@@ -29,6 +31,9 @@ const SideBar = ({ id }) => {
             <Nav.Item>
               <Nav.Link eventKey={CONTACTS_KEY}>Contacts</Nav.Link>
             </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey={SETTINGS_KEY}>Settings</Nav.Link>
+            </Nav.Item>
           </Nav>
           <Tab.Content>
             <Tab.Pane eventKey={CHAT_KEY}>
@@ -36,6 +41,9 @@ const SideBar = ({ id }) => {
             </Tab.Pane>
             <Tab.Pane eventKey={CONTACTS_KEY}>
               <ContactsList />
+            </Tab.Pane>
+            <Tab.Pane eventKey={SETTINGS_KEY}>
+              <Settings />
             </Tab.Pane>
           </Tab.Content>
           <div className="bottom">

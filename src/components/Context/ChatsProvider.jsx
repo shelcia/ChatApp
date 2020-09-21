@@ -34,15 +34,29 @@ export const ChatsProvider = ({ id, children }) => {
     console.log("chats:", chats);
     formattedChats = chats.map((chat, index) => {
       console.log("chat:", chat);
-      const recipients = chat.recipients.map((recipient) => {
-        console.log("recipient:", recipient);
-        const contact = contacts.find((contact) => {
-          return contact.id === recipient;
-        });
+      let recipients;
+      if (typeof chat.recipients !== "undefined") {
+        recipients = chat.recipients.map((recipient) => {
+          console.log("recipient:", recipient);
+          const contact = contacts.find((contact) => {
+            return contact.id === recipient;
+          });
 
-        const name = (contact && contact.name) || recipient;
-        return { id: recipient, name };
-      });
+          const name = (contact && contact.name) || recipient;
+          return { id: recipient, name };
+        });
+      } else {
+        // console.log("you entered place you shoudlnt enter");
+        recipients = chat.selectedChat.map((recipient) => {
+          console.log("recipient:", recipient);
+          const contact = contacts.find((contact) => {
+            return contact.id === recipient;
+          });
+
+          const name = (contact && contact.name) || recipient;
+          return { id: recipient, name };
+        });
+      }
 
       console.table(chat.messages);
 
@@ -69,14 +83,24 @@ export const ChatsProvider = ({ id, children }) => {
         let madeChange = false;
         const newMessage = { sender, message };
         const newConversations = prevChats.map((chat) => {
-          if (arrayEquality(chat.recipients, selectedChat)) {
-            madeChange = true;
-            return {
-              ...chat,
-              messages: [...chat.messages, newMessage],
-            };
+          if (typeof chat.recipients !== "undefined") {
+            if (arrayEquality(chat.recipients, selectedChat)) {
+              madeChange = true;
+              return {
+                ...chat,
+                messages: [...chat.messages, newMessage],
+              };
+            }
+          } else {
+            // console.log("you entered place you shoudlnt enter");
+            if (arrayEquality(chat.selectedChat, selectedChat)) {
+              madeChange = true;
+              return {
+                ...chat,
+                messages: [...chat.messages, newMessage],
+              };
+            }
           }
-
           return chat;
         });
 

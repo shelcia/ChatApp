@@ -270,6 +270,12 @@ button.button:focus {
   height: 80vh;
 }
 
+.container .row .col-sm-4 .sidebar .nav-tabs {
+  -webkit-box-shadow: 10px 10px 6px #00000005;
+          box-shadow: 10px 10px 6px #00000005;
+  padding-bottom: 0.5rem;
+}
+
 .container .row .col-sm-4 .sidebar .nav-tabs,
 .container .row .col-sm-4 .sidebar .nav-tabs .nav-link {
   border: none;
@@ -323,6 +329,8 @@ button.button:focus {
 
 .container .row .col-sm-4 .sidebar .tab-content .list-group {
   padding-top: 5px;
+  height: 55vh;
+  overflow-y: auto;
 }
 
 .container .row .col-sm-4 .sidebar .tab-content .list-group .list-group-item {
@@ -336,11 +344,19 @@ button.button:focus {
   cursor: pointer;
 }
 
-.container .row .col-sm-4 .sidebar .tab-content .list-group .list-group-item:hover, .container .row .col-sm-4 .sidebar .tab-content .list-group .list-group-item:active {
+.container .row .col-sm-4 .sidebar .tab-content .list-group .list-group-item:hover, .container .row .col-sm-4 .sidebar .tab-content .list-group .list-group-item:active, .container .row .col-sm-4 .sidebar .tab-content .list-group .list-group-item:focus {
   background-color: #fff;
+  border: none;
+}
+
+.container .row .col-sm-4 .sidebar .tab-content .list-group .list-group-item:hover, .container .row .col-sm-4 .sidebar .tab-content .list-group .list-group-item:active {
   -webkit-transform: scale(1.03);
           transform: scale(1.03);
+}
+
+.container .row .col-sm-4 .sidebar .tab-content .list-group .list-group-item.list-group-item-action {
   border: none;
+  outline: none;
 }
 
 .container .row .col-sm-4 .sidebar .tab-content .list-group .list-group-item.active {

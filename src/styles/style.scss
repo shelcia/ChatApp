@@ -171,6 +171,10 @@ button.button {
       box-shadow: 0px 3px 6px #00000005;
       .sidebar {
         height: 80vh;
+        .nav-tabs {
+          box-shadow: 10px 10px 6px #00000005;
+          padding-bottom: 0.5rem;
+        }
         .nav-tabs,
         .nav-tabs .nav-link {
           border: none;
@@ -207,6 +211,8 @@ button.button {
         .tab-content {
           .list-group {
             padding-top: 5px;
+            height: 55vh;
+            overflow-y: auto;
             .list-group-item {
               margin: 3px 2px;
               border-radius: 5px;
@@ -216,11 +222,19 @@ button.button {
               background-color: $white;
               cursor: pointer;
               &:hover,
-              &:active {
+              &:active,
+              &:focus {
                 background-color: $hover;
-                transform: scale(1.03);
                 border: none;
               }
+              &:hover,
+              &:active {
+                transform: scale(1.03);
+              }
+            }
+            .list-group-item.list-group-item-action {
+              border: none;
+              outline: none;
             }
             .list-group-item.active {
               background-color: $hover;

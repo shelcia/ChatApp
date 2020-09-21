@@ -1,6 +1,7 @@
 import React from "react";
 import { ContactsProvider } from "./components/Context/ContactsProvider";
 import { ChatsProvider } from "./components/Context/ChatsProvider";
+import { SocketProvider } from "./components/Context/SocketProvider";
 
 import useLocalStorage from "./components/customHooks/useLocalStorage";
 import Dashboard from "./components/Dashboard";
@@ -13,11 +14,13 @@ const App = () => {
 
   return (
     <React.Fragment>
-      <ContactsProvider>
-        <ChatsProvider id={id}>
-          {id ? <Dashboard id={id} /> : <Login setId={setId} />}
-        </ChatsProvider>
-      </ContactsProvider>
+      <SocketProvider id={id}>
+        <ContactsProvider>
+          <ChatsProvider id={id}>
+            {id ? <Dashboard id={id} /> : <Login setId={setId} />}
+          </ChatsProvider>
+        </ContactsProvider>
+      </SocketProvider>
     </React.Fragment>
   );
 };

@@ -229,7 +229,7 @@ button.button {
               }
               &:hover,
               &:active {
-                transform: scale(1.03);
+                transform: scaleX(1.03);
               }
             }
             .list-group-item.list-group-item-action {

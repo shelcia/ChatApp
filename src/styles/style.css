@@ -350,8 +350,8 @@ button.button:focus {
 }
 
 .container .row .col-sm-4 .sidebar .tab-content .list-group .list-group-item:hover, .container .row .col-sm-4 .sidebar .tab-content .list-group .list-group-item:active {
-  -webkit-transform: scale(1.03);
-          transform: scale(1.03);
+  -webkit-transform: scaleX(1.03);
+          transform: scaleX(1.03);
 }
 
 .container .row .col-sm-4 .sidebar .tab-content .list-group .list-group-item.list-group-item-action {

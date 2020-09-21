@@ -6,10 +6,10 @@ import Chatting from "../assets/chatting.png";
 export default function Login({ onIdSubmit }) {
   const idRef = useRef();
 
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
     onIdSubmit(idRef.current.value);
-  }
+  };
 
   function createNewId() {
     onIdSubmit(uuidV4());

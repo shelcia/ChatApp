@@ -7,7 +7,7 @@ import { ConversationsProvider } from "../components/Context/ConversationsProvid
 import { SocketProvider } from "../components/Context/SocketProvider";
 import "../styles/style.css";
 
-function App() {
+const App = () => {
   const [id, setId] = useLocalStorage("id");
 
   const dashboard = (
@@ -21,6 +21,6 @@ function App() {
   );
 
   return id ? dashboard : <Login onIdSubmit={setId} />;
-}
+};
 
 export default App;

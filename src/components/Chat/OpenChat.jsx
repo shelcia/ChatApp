@@ -49,14 +49,7 @@ const OpenChat = () => {
                     message.fromMe ? "-sameUser" : "-diffUser"
                   }`}
                 >
-                  <div
-                    // className={`message ${
-                    //   message.fromMe ? "-sameUser" : "border"
-                    // }`}
-                    className="message"
-                  >
-                    {message.message}
-                  </div>
+                  <div className="message">{message.message}</div>
                   <div
                     className={`text-muted small ${
                       message.fromMe ? "text-right" : ""

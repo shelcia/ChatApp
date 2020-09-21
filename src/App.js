@@ -12,12 +12,20 @@ import "./styles/style.css";
 const App = () => {
   const [id, setId] = useLocalStorage("id");
 
+  const whatsappId = localStorage.getItem("whatsapp-clone-id");
+
   return (
     <React.Fragment>
       <SocketProvider id={id}>
         <ContactsProvider>
           <ChatsProvider id={id}>
-            {id ? <Dashboard id={id} /> : <Login setId={setId} />}
+            {typeof whatsappId === "undefined" ? (
+              <Login setId={setId} />
+            ) : id ? (
+              <Dashboard id={id} />
+            ) : (
+              <Login setId={setId} />
+            )}
           </ChatsProvider>
         </ContactsProvider>
       </SocketProvider>

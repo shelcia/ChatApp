@@ -103,6 +103,47 @@ button.button:focus {
           box-shadow: 0 0 0 0.2rem rgba(255, 145, 10, 0.5);
 }
 
+.container.login .col-sm-8 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container.login .col-sm-8 img {
+  width: 60%;
+}
+
+.container.login .col-sm-4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container.login .col-sm-4 .form-control {
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.container.login .col-sm-4 .form-control:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 145, 10, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(255, 145, 10, 0.5);
+}
+
 .container {
   height: 85vh;
   border-radius: 1rem;

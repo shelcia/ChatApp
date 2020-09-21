@@ -13,6 +13,10 @@ $darkSecondary: rgb(225, 125, 3);
 $focusArea: 0 0 0 0.2rem rgba(255, 145, 10, 0.5);
 $noopacity: rgba(0, 0, 0, 0);
 
+// :root {
+//   filter: invert(1) hue-rotate(180deg);
+// }
+
 * {
   font-family: "Poppins", sans-serif;
 }
@@ -74,6 +78,25 @@ button.button {
   }
   &:focus {
     box-shadow: $focusArea;
+  }
+}
+
+.container.login {
+  .col-sm-8 {
+    @include displayFlex(center, center);
+    img {
+      width: 60%;
+    }
+  }
+  .col-sm-4 {
+    @include displayFlex(center, center);
+    flex-direction: column;
+    .form-control {
+      border: 1px solid $noopacity;
+      &:focus {
+        box-shadow: $focusArea;
+      }
+    }
   }
 }
 

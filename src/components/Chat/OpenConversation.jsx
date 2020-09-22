@@ -1,25 +1,33 @@
 import React, { useState, useCallback } from "react";
 import { Form, InputGroup, Button } from "react-bootstrap";
 import { useConversations } from "../Context/ConversationsProvider";
+import Picker from "emoji-picker-react";
 
 export default function OpenConversation() {
   const [text, setText] = useState("");
+  const [showEmojiBoard, setShowEmojiBoard] = useState(false);
+
   const setRef = useCallback((node) => {
     if (node) {
       node.scrollIntoView({ smooth: true });
     }
   }, []);
+
+  const onEmojiClick = (event, emojiObject) => {
+    setText((text) => text.concat(emojiObject.emoji));
+    console.log(emojiObject);
+  };
+
   const { sendMessage, selectedConversation } = useConversations();
 
-  function handleSubmit(e) {
-    e.preventDefault();
-
+  const handleSubmit = (event) => {
+    event.preventDefault();
     sendMessage(
       selectedConversation.recipients.map((r) => r.id),
       text
     );
     setText("");
-  }
+  };
 
   return (
     <div className="chat-text-container">
@@ -46,6 +54,7 @@ export default function OpenConversation() {
         })}
       </div>
       <Form onSubmit={handleSubmit} className="bottom">
+        {showEmojiBoard && <Picker onEmojiClick={onEmojiClick} />}
         <Form.Group className="m-2">
           <InputGroup>
             <Form.Control
@@ -55,6 +64,12 @@ export default function OpenConversation() {
               value={text}
               onChange={(e) => setText(e.target.value)}
             />
+            <Button
+              className="fa button"
+              onClick={() => setShowEmojiBoard(!showEmojiBoard)}
+            >
+              &#xf118;
+            </Button>
             <InputGroup.Append>
               <Button type="submit" className="button">
                 Send

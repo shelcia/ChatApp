@@ -2,6 +2,7 @@ import React, { useState, useCallback } from "react";
 import { Form, InputGroup, Button } from "react-bootstrap";
 import { useConversations } from "../Context/ConversationsProvider";
 import Picker from "emoji-picker-react";
+import ReactEmoji from "react-emoji";
 
 export default function OpenConversation() {
   const [text, setText] = useState("");
@@ -41,7 +42,7 @@ export default function OpenConversation() {
               key={index}
               className={`text${message.fromMe ? "-sameUser" : "-diffUser"}`}
             >
-              <div className="message">{message.text}</div>
+              <div className="message">{ReactEmoji.emojify(message.text)}</div>
               <div
                 className={`text-muted small ${
                   message.fromMe ? "text-right" : ""
@@ -65,13 +66,13 @@ export default function OpenConversation() {
               onChange={(e) => setText(e.target.value)}
             />
             <Button
-              className="fa button"
+              className="material-icons button"
               onClick={() => setShowEmojiBoard(!showEmojiBoard)}
             >
-              &#xf118;
+              insert_emoticon
             </Button>
             <InputGroup.Append>
-              <Button type="submit" className="button">
+              <Button type="submit" className="button ml-1">
                 Send
               </Button>
             </InputGroup.Append>

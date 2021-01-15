@@ -15,9 +15,7 @@ const Navbar = ({ id }) => {
         className="navbar navbar-expand-sm bg-light mb-0 header d-flex justify-content-between"
         style={{ height: "8vh" }}
       >
-        <a className="navbar-brand" href="/">
-          <h6>Chat App</h6>
-        </a>
+        <h5 className="text-light">Chat App</h5>
         <div>
           <span className="text-light">
             <b>Your Id:</b>

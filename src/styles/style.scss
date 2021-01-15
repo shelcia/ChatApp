@@ -250,6 +250,7 @@ $primarycolor: #369ee1;
 $secondarycolor: rgba(255, 255, 255, 0.8);
 $bordercolor: #4e5f71;
 $fontfamily: "Poppins", sans-serif;
+$black: rgb(30, 30, 30);
 
 * {
   font-family: $fontfamily;
@@ -264,6 +265,14 @@ body,
     rgba(53, 69, 85, 1) 0%,
     rgba(36, 48, 59, 1) 100%
   );
+}
+.modal-content {
+  color: $secondarycolor;
+  .modal-header {
+    border: none;
+    font-size: 2rem;
+    border-bottom: 1px solid $bordercolor;
+  }
 }
 
 @mixin displayFlex($justify, $align) {
@@ -319,15 +328,17 @@ body,
 .list-group-item.active,
 .list-group-item {
   background-color: transparent !important;
-  border-bottom: 1px solid $bordercolor;
+  border-bottom: 1px solid $bordercolor !important;
+  color: $secondarycolor !important;
 }
 
 .col-sm-9 {
   height: 85vh;
   .chat-text-container {
     flex-grow: 1 !important;
-    height: 70vh;
+    height: 75vh;
     overflow: auto;
+    padding-right: 1rem;
     .chat-text {
       @include displayFlex(flex-end, flex-start);
       flex-direction: column;
@@ -357,6 +368,24 @@ body,
       }
     }
   }
+  .bottom {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding-right: 1rem;
+    input {
+      background-color: $black;
+      border: none;
+      color: $secondarycolor;
+      border-radius: 50ex;
+    }
+    .material-icons.button {
+      background-color: transparent;
+      border: none;
+    }
+    // border: 1px solid white;
+  }
 }
 
 .header,
@@ -370,4 +399,25 @@ body,
 
 .nav-tabs {
   padding-left: 1rem !important;
+}
+
+.close {
+  color: $secondarycolor !important;
+  font-weight: 500 !important;
+  font-size: 2rem !important;
+}
+button {
+  outline: none !important;
+}
+
+.emoji-picker-react,
+.emoji-picker-react:focus {
+  background-color: $bordercolor !important;
+  color: $secondarycolor !important;
+  box-shadow: none;
+  border: none !important;
+}
+
+.emoji-group::before {
+  background-color: $bordercolor !important;
 }

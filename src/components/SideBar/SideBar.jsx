@@ -23,7 +23,7 @@ export default function Sidebar({ id }) {
   };
 
   const copyText = () =>
-    toast.warn(
+    toast.dark(
       "Your Id is copied to Clipboard. Now you can share it with your friends !!"
     );
 

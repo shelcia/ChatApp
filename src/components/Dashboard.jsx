@@ -9,7 +9,7 @@ export default function Dashboard({ id }) {
 
   return (
     <React.Fragment>
-      <div className="container mt-5">
+      <div className="container-fluid mt-5 border" style={{ height: "85vh" }}>
         <Row>
           <div className="col-sm-4">
             <Sidebar id={id} />

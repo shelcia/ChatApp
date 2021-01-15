@@ -1,0 +1,21 @@
+$primary: rgb(26, 26, 26);
+$secondary: rgb(72, 0, 255);
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primary;
+  border-radius: 0.25rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $secondary;
+  width: 5px;
+}

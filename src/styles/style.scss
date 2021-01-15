@@ -1,259 +1,292 @@
-$linearGradient: linear-gradient(toRight, #d64bff, #ffacbf);
-$bg: rgba(255, 232, 183, 0.666);
-$white: rgba(255, 255, 255, 0.6);
-$hover: #fff;
-$black: rgb(0, 0, 0);
-$font-large: 1.5rem;
-$font-medium: 1.2rem;
-$font-small: 1rem;
-$font-smaller: 0.8rem;
-$primary: rgb(255, 216, 62);
-$secondary: rgb(255, 145, 10);
-$darkSecondary: rgb(225, 125, 3);
-$focusArea: 0 0 0 0.2rem rgba(255, 145, 10, 0.5);
-$noopacity: rgba(0, 0, 0, 0);
-$fontfamily: "Poppins", sans-serif;
+// $linearGradient: linear-gradient(toRight, #d64bff, #ffacbf);
+// $bg: rgba(255, 232, 183, 0.666);
+// $white: rgba(255, 255, 255, 0.6);
+// $hover: #fff;
+// $black: rgb(0, 0, 0);
+// $font-large: 1.5rem;
+// $font-medium: 1.2rem;
+// $font-small: 1rem;
+// $font-smaller: 0.8rem;
+// $primary: rgb(255, 216, 62);
+// $secondary: rgb(255, 145, 10);
+// $darkSecondary: rgb(225, 125, 3);
+// $focusArea: 0 0 0 0.2rem rgba(255, 145, 10, 0.5);
+// $noopacity: rgba(0, 0, 0, 0);
+// $fontfamily: "Poppins", sans-serif;
+
+// @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+// @import "./components/scrollbar";
+// $bg: rgb(20, 0, 72);
+// $white: rgb(0, 56, 198);
+// $primary: rgb(26, 26, 26);
+// $secondary: rgb(72, 0, 255);
+// $darkSecondary: rgb(0, 26, 159);
+// $focusArea: 0 0 0 0.2rem rgba(10, 71, 255, 0.5);
+// $fontfamily: "Fira Sans", sans-serif;
+
+// * {
+//   font-family: $fontfamily;
+// }
+
+// body {
+//   background-color: $bg !important;
+// }
+
+// a,
+// a:visited,
+// a:any-link {
+//   text-decoration: none;
+//   color: $secondary;
+//   transition: all 0.2s ease-in;
+//   &:hover {
+//     color: $darkSecondary;
+//   }
+//   &:active {
+//     color: $hover;
+//   }
+// }
+
+// @mixin displayFlex($justify, $align) {
+//   display: flex;
+//   justify-content: $justify;
+//   align-items: $align;
+// }
+
+// @mixin borderStyle($color) {
+//   border: 1px solid $color;
+// }
+
+// button.button {
+//   background-color: $secondary !important;
+//   border-color: $secondary;
+//   &:hover,
+//   &:active,
+//   &:focus {
+//     background-color: $darkSecondary !important;
+//     border-color: $darkSecondary;
+//   }
+//   &:focus {
+//     box-shadow: $focusArea;
+//   }
+// }
+
+// .container.login {
+//   .col-sm-8 {
+//     @include displayFlex(center, center);
+//     img {
+//       width: 60%;
+//     }
+//   }
+//   .col-sm-4 {
+//     @include displayFlex(center, center);
+//     flex-direction: column;
+//     .form-control {
+//       border: 1px solid $noopacity;
+//       &:focus {
+//         box-shadow: $focusArea;
+//       }
+//     }
+//   }
+// }
+
+// .container {
+//   height: 85vh;
+//   border-radius: 1rem;
+//   background-color: $white;
+//   box-shadow: 5px 5px 5px #00000005;
+//   .row {
+//     .col-sm-8 {
+//       height: 85vh;
+//       .chat-text-container {
+//         flex-grow: 1 !important;
+//         height: 70vh;
+//         overflow: auto;
+//         .chat-text {
+//           padding: 0px 1rem;
+//           padding-top: 1rem;
+//           @include displayFlex(flex-end, flex-start);
+//           flex-direction: column;
+//           .text-sameUser,
+//           .text-diffUser {
+//             margin: 0.25rem 0rem;
+//             flex-direction: column;
+//             .message {
+//               border-radius: 0.25rem !important;
+//               padding: 0.25rem 0.5rem;
+//             }
+//           }
+//           .text-sameUser {
+//             @include displayFlex(center, flex-end);
+//             align-self: flex-end !important;
+//             .message {
+//               background-color: $primary;
+//             }
+//           }
+//           .text-diffUser {
+//             @include displayFlex(center, flex-start);
+//             .message {
+//               background-color: $hover;
+//             }
+//           }
+//         }
+//       }
+//       .bottom {
+//         position: absolute;
+//         bottom: 0px;
+//         width: 100%;
+//         left: 0px;
+//         padding: 0rem 1rem;
+//         padding-top: 1rem;
+//         background-color: $white;
+//         span {
+//           font-size: $font-smaller;
+//         }
+//         .form-control {
+//           border: 1px solid $noopacity;
+//           &:focus {
+//             box-shadow: $focusArea;
+//           }
+//         }
+//       }
+//     }
+//     .col-sm-4 {
+//       border-top-left-radius: 1rem;
+//       border-bottom-left-radius: 1rem;
+//       height: 85vh;
+//       position: relative;
+//       padding-top: 2vh;
+//       padding-bottom: 2vh;
+//       background-color: $primary;
+//       box-shadow: 0px 3px 6px #00000005;
+//       .sidebar {
+//         height: 80vh;
+//         .nav-tabs {
+//           box-shadow: 10px 10px 6px #00000005;
+//           padding-bottom: 0.5rem;
+//         }
+//         .nav-tabs,
+//         .nav-tabs .nav-link {
+//           border: none;
+//           &:hover,
+//           &:focus {
+//             outline: none;
+//             border: none;
+//           }
+//         }
+//         .nav-tabs .nav-item.show .nav-link,
+//         .nav-tabs .nav-link.active {
+//           color: $black;
+//           background-color: $white;
+//           border-radius: 50ex;
+//           border: none;
+//         }
+//         .bottom {
+//           width: 100%;
+//           border-bottom-left-radius: 1rem;
+//           padding: 0.75rem 0rem;
+//           position: absolute;
+//           bottom: 0rem;
+//           left: 0px;
+//           background-color: $white;
+//           @include displayFlex(center, center);
+//           flex-direction: column;
+//           span {
+//             font-size: $font-smaller;
+//           }
+//           button {
+//             width: 90%;
+//           }
+//         }
+//         .tab-content {
+//           .list-group {
+//             padding-top: 5px;
+//             height: 55vh;
+//             overflow-y: auto;
+//             .list-group-item {
+//               margin: 3px 2px;
+//               border-radius: 5px;
+//               color: $black;
+//               border: none;
+//               transition: all 0.2s ease-in;
+//               background-color: $white;
+//               cursor: pointer;
+//               &:hover,
+//               &:active,
+//               &:focus {
+//                 background-color: $hover;
+//                 border: none;
+//               }
+//               &:hover,
+//               &:active {
+//                 transform: scaleX(1.03);
+//               }
+//             }
+//             .list-group-item.list-group-item-action {
+//               border: none;
+//               outline: none;
+//             }
+//             .list-group-item.active {
+//               background-color: $hover;
+//               border: none;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// @media (min-width: 576px) {
+//   .container {
+//     max-width: 90% !important;
+//   }
+// }
 
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
-$bg: rgba(72, 0, 255, 0.441);
-$white: rgba(255, 255, 255, 0.6);
-$primary: rgb(48, 48, 48);
-$secondary: rgb(72, 0, 255);
-$darkSecondary: rgb(0, 26, 159);
+@import "./components/scrollbar";
+
 $fontfamily: "Fira Sans", sans-serif;
+$primarycolor: #369ee1;
+$secondarycolor: rgba(255, 255, 255, 0.9);
+$bordercolor: #4e5f71;
 
 * {
   font-family: $fontfamily;
 }
 
 body {
-  background-color: $bg !important;
+  background: rgb(53, 69, 85);
+  background: linear-gradient(
+    90deg,
+    rgba(53, 69, 85, 1) 0%,
+    rgba(36, 48, 59, 1) 100%
+  );
 }
 
-::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
-}
-
-::-webkit-scrollbar-track {
-  background: $noopacity;
-}
-
-::-webkit-scrollbar-thumb {
-  background: $primary;
-  border-radius: 0.25rem;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: $secondary;
-  width: 5px;
-}
-a,
-a:visited,
-a:any-link {
-  text-decoration: none;
-  color: $secondary;
-  transition: all 0.2s ease-in;
-  &:hover {
-    color: $darkSecondary;
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs {
+  .nav-link.active {
+    background-color: transparent !important;
+    border: none !important;
+    color: $secondarycolor !important;
   }
-  &:active {
-    color: $hover;
-  }
-}
-
-@mixin displayFlex($justify, $align) {
-  display: flex;
-  justify-content: $justify;
-  align-items: $align;
-}
-
-@mixin borderStyle($color) {
-  border: 1px solid $color;
-}
-
-button.button {
-  background-color: $secondary !important;
-  border-color: $secondary;
-  &:hover,
-  &:active,
-  &:focus {
-    background-color: $darkSecondary !important;
-    border-color: $darkSecondary;
-  }
-  &:focus {
-    box-shadow: $focusArea;
-  }
-}
-
-.container.login {
-  .col-sm-8 {
-    @include displayFlex(center, center);
-    img {
-      width: 60%;
+  .nav-link {
+    background-color: transparent !important;
+    border: none !important;
+    color: $secondarycolor !important;
+    &::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: $primarycolor;
+      transition: width 0.3s;
     }
-  }
-  .col-sm-4 {
-    @include displayFlex(center, center);
-    flex-direction: column;
-    .form-control {
-      border: 1px solid $noopacity;
-      &:focus {
-        box-shadow: $focusArea;
-      }
+    &:hover::after {
+      width: 100%;
     }
   }
 }
-
-.container {
-  height: 85vh;
-  border-radius: 1rem;
-  background-color: $white;
-  box-shadow: 5px 5px 5px #00000005;
-  .row {
-    .col-sm-8 {
-      height: 85vh;
-      .chat-text-container {
-        flex-grow: 1 !important;
-        height: 70vh;
-        overflow: auto;
-        .chat-text {
-          padding: 0px 1rem;
-          padding-top: 1rem;
-          @include displayFlex(flex-end, flex-start);
-          flex-direction: column;
-          .text-sameUser,
-          .text-diffUser {
-            margin: 0.25rem 0rem;
-            flex-direction: column;
-            .message {
-              border-radius: 0.25rem !important;
-              padding: 0.25rem 0.5rem;
-            }
-          }
-          .text-sameUser {
-            @include displayFlex(center, flex-end);
-            align-self: flex-end !important;
-            .message {
-              background-color: $primary;
-            }
-          }
-          .text-diffUser {
-            @include displayFlex(center, flex-start);
-            .message {
-              background-color: $hover;
-            }
-          }
-        }
-      }
-      .bottom {
-        position: absolute;
-        bottom: 0px;
-        width: 100%;
-        left: 0px;
-        padding: 0rem 1rem;
-        padding-top: 1rem;
-        background-color: $white;
-        span {
-          font-size: $font-smaller;
-        }
-        .form-control {
-          border: 1px solid $noopacity;
-          &:focus {
-            box-shadow: $focusArea;
-          }
-        }
-      }
-    }
-    .col-sm-4 {
-      border-top-left-radius: 1rem;
-      border-bottom-left-radius: 1rem;
-      height: 85vh;
-      position: relative;
-      padding-top: 2vh;
-      padding-bottom: 2vh;
-      background-color: $primary;
-      box-shadow: 0px 3px 6px #00000005;
-      .sidebar {
-        height: 80vh;
-        .nav-tabs {
-          box-shadow: 10px 10px 6px #00000005;
-          padding-bottom: 0.5rem;
-        }
-        .nav-tabs,
-        .nav-tabs .nav-link {
-          border: none;
-          &:hover,
-          &:focus {
-            outline: none;
-            border: none;
-          }
-        }
-        .nav-tabs .nav-item.show .nav-link,
-        .nav-tabs .nav-link.active {
-          color: $black;
-          background-color: $white;
-          border-radius: 50ex;
-          border: none;
-        }
-        .bottom {
-          width: 100%;
-          border-bottom-left-radius: 1rem;
-          padding: 0.75rem 0rem;
-          position: absolute;
-          bottom: 0rem;
-          left: 0px;
-          background-color: $white;
-          @include displayFlex(center, center);
-          flex-direction: column;
-          span {
-            font-size: $font-smaller;
-          }
-          button {
-            width: 90%;
-          }
-        }
-        .tab-content {
-          .list-group {
-            padding-top: 5px;
-            height: 55vh;
-            overflow-y: auto;
-            .list-group-item {
-              margin: 3px 2px;
-              border-radius: 5px;
-              color: $black;
-              border: none;
-              transition: all 0.2s ease-in;
-              background-color: $white;
-              cursor: pointer;
-              &:hover,
-              &:active,
-              &:focus {
-                background-color: $hover;
-                border: none;
-              }
-              &:hover,
-              &:active {
-                transform: scaleX(1.03);
-              }
-            }
-            .list-group-item.list-group-item-action {
-              border: none;
-              outline: none;
-            }
-            .list-group-item.active {
-              background-color: $hover;
-              border: none;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (min-width: 576px) {
-  .container {
-    max-width: 90% !important;
-  }
+.nav-tabs {
+  border-bottom: 1px solid $bordercolor !important;
 }

@@ -1,9 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 * {
-  font-family: "Poppins", sans-serif;
+  font-family: "Fira Sans", sans-serif;
 }
 
 body {
-  background-color: rgba(255, 232, 183, 0.666) !important;
+  background-color: rgba(72, 0, 255, 0.441) !important;
 }
 
 ::-webkit-scrollbar {
@@ -16,12 +17,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ffd83e;
+  background: #303030;
   border-radius: 0.25rem;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff910a;
+  background: #4800ff;
   width: 5px;
 }
 
@@ -29,7 +30,7 @@ a,
 a:visited,
 a:-webkit-any-link {
   text-decoration: none;
-  color: #ff910a;
+  color: #4800ff;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
@@ -38,7 +39,7 @@ a,
 a:visited,
 a:-moz-any-link {
   text-decoration: none;
-  color: #ff910a;
+  color: #4800ff;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
@@ -47,7 +48,7 @@ a,
 a:visited,
 a:any-link {
   text-decoration: none;
-  color: #ff910a;
+  color: #4800ff;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
@@ -55,19 +56,19 @@ a:any-link {
 a:hover,
 a:visited:hover,
 a:-webkit-any-link:hover {
-  color: #e17d03;
+  color: #001a9f;
 }
 
 a:hover,
 a:visited:hover,
 a:-moz-any-link:hover {
-  color: #e17d03;
+  color: #001a9f;
 }
 
 a:hover,
 a:visited:hover,
 a:any-link:hover {
-  color: #e17d03;
+  color: #001a9f;
 }
 
 a:active,
@@ -89,13 +90,13 @@ a:any-link:active {
 }
 
 button.button {
-  background-color: #ff910a !important;
-  border-color: #ff910a;
+  background-color: #4800ff !important;
+  border-color: #4800ff;
 }
 
 button.button:hover, button.button:active, button.button:focus {
-  background-color: #e17d03 !important;
-  border-color: #e17d03;
+  background-color: #001a9f !important;
+  border-color: #001a9f;
 }
 
 button.button:focus {
@@ -212,7 +213,7 @@ button.button:focus {
 }
 
 .container .row .col-sm-8 .chat-text-container .chat-text .text-sameUser .message {
-  background-color: #ffd83e;
+  background-color: #303030;
 }
 
 .container .row .col-sm-8 .chat-text-container .chat-text .text-diffUser {
@@ -261,7 +262,7 @@ button.button:focus {
   position: relative;
   padding-top: 2vh;
   padding-bottom: 2vh;
-  background-color: #ffd83e;
+  background-color: #303030;
   -webkit-box-shadow: 0px 3px 6px #00000005;
           box-shadow: 0px 3px 6px #00000005;
 }

@@ -10,6 +10,11 @@ export default function NewContactModal({ closeModal }) {
   function handleSubmit(e) {
     e.preventDefault();
 
+    if (!idRef.current.value || !nameRef.current.value) {
+      console.log("add values");
+      return;
+    }
+
     createContact(idRef.current.value, nameRef.current.value);
     closeModal();
   }

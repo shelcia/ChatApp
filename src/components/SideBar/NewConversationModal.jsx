@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Modal, Form, Button } from "react-bootstrap";
+import { toast } from "react-toastify";
 import { useContacts } from "../Context/ContactsProvider";
 import { useConversations } from "../Context/ConversationsProvider";
 
@@ -10,7 +11,10 @@ export default function NewConversationModal({ closeModal }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-
+    if (selectedContactIds.length === 0) {
+      toast.error("Add atleast one contact");
+      return;
+    }
     createConversation(selectedContactIds);
     closeModal();
   }

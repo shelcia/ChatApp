@@ -23,7 +23,8 @@
 }
 
 body,
-.bg-light {
+.bg-light,
+.modal-content {
   background: #354555;
   background: -webkit-gradient(linear, left top, right top, from(#354555), to(#24303b));
   background: linear-gradient(90deg, #354555 0%, #24303b 100%);
@@ -79,6 +80,7 @@ body,
 .list-group-item.active,
 .list-group-item {
   background-color: transparent !important;
+  border-bottom: 1px solid #4e5f71;
 }
 
 .col-sm-9 {
@@ -161,7 +163,8 @@ body,
   background-color: #4e5f71;
 }
 
-.header {
+.header,
+.top {
   border-bottom: 1px solid #4e5f71;
 }
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Tab, Nav, Button, Modal } from "react-bootstrap";
+import { Tab, Nav, Modal } from "react-bootstrap";
 import Conversations from "./Conversations";
 import Contacts from "./Contacts";
 import Setting from "./Setting";
@@ -11,7 +11,7 @@ const CONVERSATIONS_KEY = "conversations";
 const CONTACTS_KEY = "contacts";
 const SETTINGS_KEY = "settings";
 
-export default function Sidebar({ id }) {
+export default function Sidebar() {
   const [activeKey, setActiveKey] = useState(CONVERSATIONS_KEY);
   const [modalOpen, setModalOpen] = useState(false);
   const conversationsOpen = activeKey === CONVERSATIONS_KEY;
@@ -35,6 +35,18 @@ export default function Sidebar({ id }) {
           </Nav.Item>
         </Nav>
         <Tab.Content>
+          <div className="top pb-3">
+            <h3 className="text-light mb-0 pl-3">
+              {conversationsOpen ? "Chat" : "Contact"}
+              <span
+                className="material-icons pl-2"
+                onClick={() => setModalOpen(true)}
+                style={{ cursor: "pointer", color: "#369ee1" }}
+              >
+                &#xe148;
+              </span>
+            </h3>
+          </div>
           <Tab.Pane eventKey={CONVERSATIONS_KEY}>
             <Conversations />
           </Tab.Pane>
@@ -45,24 +57,6 @@ export default function Sidebar({ id }) {
             <Setting />
           </Tab.Pane>
         </Tab.Content>
-        <div className="bottom">
-          {/* Your Id:{" "}
-          <span className="text-muted" value={id}>
-            {id}
-            <CopyToClipboard text={id}>
-              <i
-                className="material-icons"
-                style={{ fontSize: "13px", cursor: "pointer" }}
-                onClick={() => copyText()}
-              >
-                &#xe14d;
-              </i>
-            </CopyToClipboard>
-          </span> */}
-          <Button onClick={() => setModalOpen(true)} className="button">
-            New {conversationsOpen ? "Chat" : "Contact"}
-          </Button>
-        </div>
       </Tab.Container>
 
       <Modal show={modalOpen} onHide={closeModal}>

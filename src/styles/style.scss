@@ -256,7 +256,8 @@ $fontfamily: "Poppins", sans-serif;
 }
 
 body,
-.bg-light {
+.bg-light,
+.modal-content {
   background: rgb(53, 69, 85);
   background: linear-gradient(
     90deg,
@@ -318,6 +319,7 @@ body,
 .list-group-item.active,
 .list-group-item {
   background-color: transparent !important;
+  border-bottom: 1px solid $bordercolor;
 }
 
 .col-sm-9 {
@@ -357,7 +359,8 @@ body,
   }
 }
 
-.header {
+.header,
+.top {
   border-bottom: 1px solid #4e5f71;
 }
 

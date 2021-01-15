@@ -5,8 +5,6 @@ import Contacts from "./Contacts";
 import Setting from "./Setting";
 import NewContactModal from "./NewContactModal";
 import NewConversationModal from "./NewConversationModal";
-import { CopyToClipboard } from "react-copy-to-clipboard";
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const CONVERSATIONS_KEY = "conversations";
@@ -22,14 +20,8 @@ export default function Sidebar({ id }) {
     setModalOpen(false);
   };
 
-  const copyText = () =>
-    toast.dark(
-      "Your Id is copied to Clipboard. Now you can share it with your friends !!"
-    );
-
   return (
     <div className="sidebar">
-      <ToastContainer />
       <Tab.Container activeKey={activeKey} onSelect={setActiveKey}>
         <Nav variant="tabs">
           <Nav.Item>
@@ -54,7 +46,7 @@ export default function Sidebar({ id }) {
           </Tab.Pane>
         </Tab.Content>
         <div className="bottom">
-          Your Id:{" "}
+          {/* Your Id:{" "}
           <span className="text-muted" value={id}>
             {id}
             <CopyToClipboard text={id}>
@@ -66,7 +58,7 @@ export default function Sidebar({ id }) {
                 &#xe14d;
               </i>
             </CopyToClipboard>
-          </span>
+          </span> */}
           <Button onClick={() => setModalOpen(true)} className="button">
             New {conversationsOpen ? "Chat" : "Contact"}
           </Button>

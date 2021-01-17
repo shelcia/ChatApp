@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,800&display=swap");
 ::-webkit-scrollbar {
   width: 4px;
   height: 4px;
@@ -19,6 +20,10 @@
 
 * {
   font-family: "Poppins", sans-serif;
+}
+
+.text-blue {
+  color: #369ee1 !important;
 }
 
 body,
@@ -221,13 +226,15 @@ button {
 .emoji-picker-react:focus {
   background-color: #4e5f71 !important;
   color: rgba(255, 255, 255, 0.8) !important;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
   border: none !important;
 }
 
 .emoji-group::before {
   background-color: #4e5f71 !important;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .col-sm-8,
@@ -239,7 +246,34 @@ button {
   background-color: #369ee1 !important;
 }
 
+.btn-primary:hover {
+  background-color: #006cb5 !important;
+}
+
 .btn {
   padding: 0.5rem 1.5rem !important;
+  -webkit-box-shadow: 0px 1rem 1rem #00000015;
+          box-shadow: 0px 1rem 1rem #00000015;
+}
+
+.list-group-item.active.list-group-item-action {
+  border-left: 5px solid #369ee1;
+  background: -webkit-gradient(linear, left top, right top, from(#354555), to(#24303b));
+  background: linear-gradient(90deg, #354555 0%, #24303b 100%);
+  border-top: none;
+  margin-top: 0px !important;
+}
+
+.button {
+  border-radius: 0.2rem;
+  -webkit-transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+  border: none;
+}
+
+.list-group-item.active:focus,
+.list-group-item-action:focus {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 /*# sourceMappingURL=style.css.map */

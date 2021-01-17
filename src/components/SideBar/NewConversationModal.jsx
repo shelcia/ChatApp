@@ -46,7 +46,7 @@ export default function NewConversationModal({ closeModal }) {
               />
             </Form.Group>
           ))}
-          <div className="text-center">
+          <div className="text-center mt-4">
             <Button type="submit" className="button w-100">
               Create
             </Button>

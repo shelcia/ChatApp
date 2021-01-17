@@ -20,6 +20,10 @@ const Footer = () => {
             <a href="https://github.com/shelcia/ChatApp" className="px-2">
               Github
             </a>
+            Developed By
+            <a href="https://github.com/shelcia" className="px-2">
+              Shelcia.
+            </a>
           </p>
         </div>
       </nav>

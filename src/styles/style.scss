@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,800&display=swap");
 @import "./components/scrollbar";
 
 $primarycolor: #369ee1;
@@ -8,6 +9,9 @@ $black: rgb(30, 30, 30);
 
 * {
   font-family: $fontfamily;
+}
+.text-blue {
+  color: $primarycolor !important;
 }
 
 body,
@@ -168,12 +172,13 @@ button {
 .emoji-picker-react:focus {
   background-color: $bordercolor !important;
   color: $secondarycolor !important;
-  box-shadow: none;
+  box-shadow: none !important;
   border: none !important;
 }
 
 .emoji-group::before {
   background-color: $bordercolor !important;
+  box-shadow: none;
 }
 
 .col-sm-8,
@@ -182,8 +187,35 @@ button {
 }
 
 .btn-primary {
-  background-color: #369ee1 !important;
+  background-color: $primarycolor !important;
+  &:hover {
+    background-color: #006cb5 !important;
+  }
 }
 .btn {
   padding: 0.5rem 1.5rem !important;
+  @include shadow-sm();
+}
+
+.list-group-item.active.list-group-item-action {
+  border-left: 5px solid $primarycolor;
+  background: linear-gradient(
+    90deg,
+    rgba(53, 69, 85, 1) 0%,
+    rgba(36, 48, 59, 1) 100%
+  );
+  border-top: none;
+  margin-top: 0px !important;
+}
+
+.button {
+  border-radius: 0.2rem;
+  transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+  border: none;
+}
+
+.list-group-item.active:focus,
+.list-group-item-action:focus {
+  box-shadow: none !important;
+  // border: none !important;
 }

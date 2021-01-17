@@ -4,7 +4,7 @@ import { useContacts } from "../Context/ContactsProvider";
 
 export default function Contacts() {
   const { contacts } = useContacts();
-  console.table(contacts);
+  // console.table(contacts);
 
   return (
     <ListGroup variant="flush">

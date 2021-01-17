@@ -2,14 +2,12 @@ import React, { useState } from "react";
 import { Tab, Nav, Modal } from "react-bootstrap";
 import Conversations from "./Conversations";
 import Contacts from "./Contacts";
-import Setting from "./Setting";
 import NewContactModal from "./NewContactModal";
 import NewConversationModal from "./NewConversationModal";
 import "react-toastify/dist/ReactToastify.css";
 
 const CONVERSATIONS_KEY = "conversations";
 const CONTACTS_KEY = "contacts";
-const SETTINGS_KEY = "settings";
 
 export default function Sidebar() {
   const [activeKey, setActiveKey] = useState(CONVERSATIONS_KEY);
@@ -30,9 +28,6 @@ export default function Sidebar() {
           <Nav.Item>
             <Nav.Link eventKey={CONTACTS_KEY}>Contacts</Nav.Link>
           </Nav.Item>
-          <Nav.Item>
-            <Nav.Link eventKey={SETTINGS_KEY}>Settings</Nav.Link>
-          </Nav.Item>
         </Nav>
         <Tab.Content>
           <div className="top pb-3">
@@ -52,9 +47,6 @@ export default function Sidebar() {
           </Tab.Pane>
           <Tab.Pane eventKey={CONTACTS_KEY}>
             <Contacts />
-          </Tab.Pane>
-          <Tab.Pane eventKey={SETTINGS_KEY}>
-            <Setting />
           </Tab.Pane>
         </Tab.Content>
       </Tab.Container>

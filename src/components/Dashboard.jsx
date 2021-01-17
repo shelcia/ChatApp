@@ -5,6 +5,7 @@ import OpenConversation from "../components/Chat/OpenConversation";
 import { useConversations } from "../components/Context/ConversationsProvider";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import EmptyChat from "./EmptyChat";
 
 export default function Dashboard({ id }) {
   const { selectedConversation } = useConversations();
@@ -18,6 +19,7 @@ export default function Dashboard({ id }) {
             <Sidebar id={id} />
           </div>
           <div className="col-sm-9">
+            {!selectedConversation && <EmptyChat />}
             {selectedConversation && <OpenConversation />}
           </div>
         </Row>

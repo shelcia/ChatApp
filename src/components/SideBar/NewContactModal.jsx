@@ -42,7 +42,7 @@ export default function NewContactModal({ closeModal }) {
               required
             />
           </Form.Group>
-          <div className="text-center">
+          <div className="text-center mt-4">
             <Button type="submit" className="button w-100">
               Create
             </Button>

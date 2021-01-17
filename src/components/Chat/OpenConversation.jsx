@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useRef, useEffect } from "react";
 import { Form, InputGroup, Button } from "react-bootstrap";
 import { useConversations } from "../Context/ConversationsProvider";
 import Picker from "emoji-picker-react";
@@ -7,6 +7,22 @@ import ReactEmoji from "react-emoji";
 export default function OpenConversation() {
   const [text, setText] = useState("");
   const [showEmojiBoard, setShowEmojiBoard] = useState(false);
+  const emojiRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (emojiRef.current && !emojiRef.current.contains(event.target)) {
+        // console.log(emojiRef.current, document);
+        setShowEmojiBoard(false);
+      }
+    };
+    // Bind the event listener
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      // Unbind the event listener on clean up
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [emojiRef]);
 
   const setRef = useCallback((node) => {
     if (node) {
@@ -16,7 +32,6 @@ export default function OpenConversation() {
 
   const onEmojiClick = (event, emojiObject) => {
     setText((text) => text.concat(emojiObject.emoji));
-    console.log(emojiObject);
   };
 
   const { sendMessage, selectedConversation } = useConversations();
@@ -55,7 +70,11 @@ export default function OpenConversation() {
         })}
       </div>
       <Form onSubmit={handleSubmit} className="bottom">
-        {showEmojiBoard && <Picker onEmojiClick={onEmojiClick} />}
+        {showEmojiBoard && (
+          <div ref={emojiRef}>
+            <Picker onEmojiClick={onEmojiClick} />
+          </div>
+        )}
         <Form.Group className="m-2">
           <InputGroup>
             <Form.Control
@@ -65,12 +84,13 @@ export default function OpenConversation() {
               value={text}
               onChange={(e) => setText(e.target.value)}
             />
-            <Button
-              className="material-icons button"
+            <button
+              type="button"
+              className="material-icons button btn-primary"
               onClick={() => setShowEmojiBoard(!showEmojiBoard)}
             >
               insert_emoticon
-            </Button>
+            </button>
             <InputGroup.Append>
               <Button type="submit" className="button ml-1">
                 Send

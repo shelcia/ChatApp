@@ -15,7 +15,7 @@ export default function Login({ onIdSubmit }) {
   }
 
   return (
-    <Container className="mt-5 login">
+    <Container className="login">
       <div className="row">
         <div className="col-sm-8 d-flex align-items-center">
           <img
@@ -24,12 +24,29 @@ export default function Login({ onIdSubmit }) {
             style={{ maxHeight: "100vh", maxWidth: "100%" }}
           />
         </div>
-        <div className="col-sm-4 d-flex align-items-center flex-column justify-content-center">
+        <div className="col-sm-4 d-flex flex-column justify-content-center">
           <div className="pl-0">
-            <h1 className="text-white pl-0">Freee Chat App</h1>
-            <p className="text-white pl-0">No Signup Required</p>
+            <h1 className="text-white mb-2">Chat App</h1>
+            <p className="text-blue mb-0">
+              <i className="material-icons" style={{ fontSize: "18px" }}>
+                check
+              </i>{" "}
+              for Instant Messaging
+            </p>
+            <p className="text-blue mb-0">
+              <i className="material-icons" style={{ fontSize: "18px" }}>
+                check
+              </i>{" "}
+              No Signup Required
+            </p>
+            <p className="text-blue">
+              <i className="material-icons" style={{ fontSize: "18px" }}>
+                check
+              </i>{" "}
+              Multiple Group Chats with no limit on members
+            </p>
           </div>
-          <Form onSubmit={handleSubmit} className="w-100 mt-3">
+          <Form onSubmit={handleSubmit} className="w-100 mt-2">
             <Form.Group>
               <Form.Label className="text-white">Enter Your Id</Form.Label>
               <Form.Control

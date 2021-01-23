@@ -73,9 +73,7 @@ const ModalLogout = ({ logout }) => {
               </button>
             </div>
             <div className="modal-body border border-0">
-              If you log out all you saved contacts and conversations are
-              deleted. We do not store any of you chat so there's no way to
-              retrieve it.
+              If you log out all your saved contacts and conversations will be deleted. We do not store any of your chats. There is no way to retrieve it.
             </div>
             <div className="modal-footer border border-0">
               <button

@@ -16,7 +16,7 @@
     "react-scripts": "3.4.3",
     "react-toastify": "^6.0.8",
     "socket.io-client": "^2.3.0",
-    "uuid": "^8.3.0"
+    "uuid": "^8.3.2"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -14,7 +14,7 @@
     "react-dom": "^16.13.1",
     "react-emoji": "^0.5.0",
     "react-scripts": "3.4.3",
-    "react-toastify": "^6.0.8",
+    "react-toastify": "^7.0.3",
     "socket.io-client": "^4.0.1",
     "uuid": "^8.3.2"
   },

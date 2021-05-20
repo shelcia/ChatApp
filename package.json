@@ -7,7 +7,7 @@
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^13.1.8",
     "bootstrap": "^4.6.0",
-    "emoji-picker-react": "^3.4.4",
+    "emoji-picker-react": "^3.4.5",
     "react": "^17.0.2",
     "react-bootstrap": "^1.5.1",
     "react-copy-to-clipboard": "^5.0.3",

@@ -4784,10 +4784,10 @@ emoji-emoticon-to-unicode@^0.2.2:
   resolved "https://registry.yarnpkg.com/emoji-emoticon-to-unicode/-/emoji-emoticon-to-unicode-0.2.2.tgz#5ae60d53852d8328b63f31d1ca29897ebb783260"
   integrity sha1-WuYNU4Utgyi2PzHRyimJfrt4MmA=
 
-emoji-picker-react@^3.4.8:
-  version "3.4.8"
-  resolved "https://registry.yarnpkg.com/emoji-picker-react/-/emoji-picker-react-3.4.8.tgz#6d3365a3447f9bb8b39ec1a007cdef39553d3810"
-  integrity sha512-HsKsompl0zThl1jhLaRPHnn0MdPVs9AxJRa5KM7OVnteoCx/tNr9iMipC2rI2vAMkKstlkedirswUwKAu2AsDg==
+emoji-picker-react@^3.4.11:
+  version "3.4.11"
+  resolved "https://registry.yarnpkg.com/emoji-picker-react/-/emoji-picker-react-3.4.11.tgz#0691525ae0a987d7d2bf9419db9c2024ee2224ef"
+  integrity sha512-fYND7GfAMHnmydIF7nZUS/vNmiTkoZRnyj8+I1Gkrs54sF6bAgSxbVdD+wyvwt/M+CaVynJ0gOH30AL9DxL60A==
 
 emoji-regex@^7.0.1:
   version "7.0.3"

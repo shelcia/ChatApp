@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useRef, useEffect } from "react";
 // import { Form, InputGroup, Button } from "react-bootstrap";
-import { useConversations } from "../Context/ConversationsProvider";
+import { useConversations } from "../../context/ConversationsProvider";
 import Picker from "emoji-picker-react";
 import ReactEmoji from "react-emoji";
 import { Button, Form, InputGroup } from "react-bootstrap";
@@ -92,7 +92,9 @@ const OpenConversation = () => {
             >
               insert_emoticon
             </button>
-            <InputGroup.Text style={{ background: "transparent" }}>
+            <InputGroup.Text
+              style={{ background: "transparent", border: "none", padding: 0 }}
+            >
               <Button type="submit" className="button ms-1">
                 Send
               </Button>

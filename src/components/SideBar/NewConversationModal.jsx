@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Modal, Form, Button } from "react-bootstrap";
 import { toast } from "react-toastify";
-import { useContacts } from "../Context/ContactsProvider";
-import { useConversations } from "../Context/ConversationsProvider";
+import { useContacts } from "../../context/ContactsProvider";
+import { useConversations } from "../../context/ConversationsProvider";
 
 export default function NewConversationModal({ closeModal }) {
   const [selectedContactIds, setSelectedContactIds] = useState([]);

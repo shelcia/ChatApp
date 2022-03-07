@@ -1,11 +1,11 @@
 import React from "react";
-import Login from "./Login";
-import useLocalStorage from "../components/customHooks/useLocalStorage";
-import Dashboard from "./Dashboard";
-import { ContactsProvider } from "../components/Context/ContactsProvider";
-import { ConversationsProvider } from "../components/Context/ConversationsProvider";
-import { SocketProvider } from "../components/Context/SocketProvider";
-import "../styles/style.css";
+import Login from "./pages/Login";
+import useLocalStorage from "./hooks/useLocalStorage";
+import Dashboard from "./pages/Dashboard";
+import { ContactsProvider } from "./context/ContactsProvider";
+import { ConversationsProvider } from "./context/ConversationsProvider";
+import { SocketProvider } from "./context/SocketProvider";
+import "./styles/style.css";
 
 const App = () => {
   const [id, setId] = useLocalStorage("id");

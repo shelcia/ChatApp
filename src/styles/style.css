@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,800&display=swap");
+@import url(/Users/shelciaabi/Documents/code stuff/reactfile/ChatApp/src/styles/bootstrap-grid.css);
+@import url(/Users/shelciaabi/Documents/code stuff/reactfile/ChatApp/src/styles/bootstrap-utils.css);
 ::-webkit-scrollbar {
   width: 4px;
   height: 4px;
@@ -180,10 +182,9 @@ body,
 }
 
 .col-sm-9 .bottom {
-  width: 100%;
+  width: 70%;
   position: absolute;
-  bottom: 0px;
-  left: 0px;
+  bottom: 7vh;
   padding-right: 1rem;
 }
 

@@ -1,11 +1,11 @@
 import React from "react";
 import { Row } from "react-bootstrap";
 import Sidebar from "../components/SideBar/SideBar";
-import OpenConversation from "../components/Chat/OpenConversation";
 import { useConversations } from "../components/Context/ConversationsProvider";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import EmptyChat from "./EmptyChat";
+import OpenConversation from "./Chat/OpenConversation";
 
 export default function Dashboard({ id }) {
   const { selectedConversation } = useConversations();

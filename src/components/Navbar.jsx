@@ -27,9 +27,10 @@ const Navbar = ({ id }) => {
         <div>
           <h5 className="text-light d-inline">Chat App</h5>
           <button
-            className="btn-primary button ml-4"
+            className="btn-primary button ms-4"
             data-toggle="modal"
             data-target="#myModal"
+            onClick={(e) => logout(e)}
           >
             Logout
           </button>
@@ -39,8 +40,8 @@ const Navbar = ({ id }) => {
           <span className="text-light">
             <b>Your Id:</b>
           </span>{" "}
-          <span className="text-light pr-2" value={id}>
-            <span className="pr-3"> {id} </span>
+          <span className="text-light pe-2" value={id}>
+            <span className="pe-3"> {id} </span>
             <CopyToClipboard text={id}>
               <i
                 className="material-icons"
@@ -73,7 +74,9 @@ const ModalLogout = ({ logout }) => {
               </button>
             </div>
             <div className="modal-body border border-0">
-              If you log out all your saved contacts and conversations will be deleted. We do not store any of your chats. There is no way to retrieve it.
+              If you log out all your saved contacts and conversations will be
+              deleted. We do not store any of your chats. There is no way to
+              retrieve it.
             </div>
             <div className="modal-footer border border-0">
               <button

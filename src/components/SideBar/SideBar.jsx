@@ -31,10 +31,10 @@ export default function Sidebar() {
         </Nav>
         <Tab.Content>
           <div className="top pb-3">
-            <h3 className="text-light mb-0 pl-3">
+            <h3 className="text-light mb-0 ps-3">
               {conversationsOpen ? "Chat" : "Contact"}
               <span
-                className="material-icons pl-2"
+                className="material-icons ps-2"
                 onClick={() => setModalOpen(true)}
                 style={{ cursor: "pointer", color: "#369ee1" }}
               >

@@ -1,10 +1,11 @@
 import React, { useState, useCallback, useRef, useEffect } from "react";
-import { Form, InputGroup, Button } from "react-bootstrap";
+// import { Form, InputGroup, Button } from "react-bootstrap";
 import { useConversations } from "../Context/ConversationsProvider";
 import Picker from "emoji-picker-react";
 import ReactEmoji from "react-emoji";
+import { Button, Form, InputGroup } from "react-bootstrap";
 
-export default function OpenConversation() {
+const OpenConversation = () => {
   const [text, setText] = useState("");
   const [showEmojiBoard, setShowEmojiBoard] = useState(false);
   const emojiRef = useRef(null);
@@ -91,14 +92,16 @@ export default function OpenConversation() {
             >
               insert_emoticon
             </button>
-            <InputGroup.Append>
-              <Button type="submit" className="button ml-1">
+            <InputGroup.Text style={{ background: "transparent" }}>
+              <Button type="submit" className="button ms-1">
                 Send
               </Button>
-            </InputGroup.Append>
+            </InputGroup.Text>
           </InputGroup>
         </Form.Group>
       </Form>
     </div>
   );
-}
+};
+
+export default OpenConversation;

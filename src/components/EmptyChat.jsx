@@ -13,21 +13,21 @@ const EmptyChat = () => {
             🥺🥺🥺
           </span>
         </h1>
-        <div className="mt-4 ml-5 text-blue w-50">
+        <div className="mt-4 ms-5 text-blue w-50">
           <p className="mb-1">
-            <i className="material-icons pr-2" style={{ fontSize: "18px" }}>
+            <i className="material-icons pe-2" style={{ fontSize: "18px" }}>
               check
             </i>
             Share your <b>id</b> with your friends
           </p>
           <p className="mb-1">
-            <i className="material-icons pr-2" style={{ fontSize: "18px" }}>
+            <i className="material-icons pe-2" style={{ fontSize: "18px" }}>
               check
             </i>
             Get their <b>id</b> and create contacts
           </p>
           <p className="mb-1">
-            <i className="material-icons pr-2" style={{ fontSize: "18px" }}>
+            <i className="material-icons pe-2" style={{ fontSize: "18px" }}>
               check
             </i>
             Now you can either create private or group chat rooms by selecting

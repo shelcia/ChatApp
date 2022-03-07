@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,800&display=swap");
 @import "./components/scrollbar";
+@import "./bootstrap-grid.css";
+@import "./bootstrap-utils.css";
 
 $primarycolor: #369ee1;
 $secondarycolor: rgba(255, 255, 255, 0.8);
@@ -127,10 +129,11 @@ body,
     }
   }
   .bottom {
-    width: 100%;
+    width: 70%;
     position: absolute;
-    bottom: 0px;
-    left: 0px;
+    // bottom: 0px;
+    bottom: 7vh;
+    // left: 0px;
     padding-right: 1rem;
     input {
       background-color: $black;

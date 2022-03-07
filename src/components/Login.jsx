@@ -25,7 +25,7 @@ export default function Login({ onIdSubmit }) {
           />
         </div>
         <div className="col-sm-4 d-flex flex-column justify-content-center">
-          <div className="pl-0">
+          <div className="ps-0">
             <h1 className="text-white mb-2">Chat App</h1>
             <p className="text-blue mb-0">
               <i className="material-icons" style={{ fontSize: "18px" }}>
@@ -56,7 +56,7 @@ export default function Login({ onIdSubmit }) {
                 placeholder="Enter ID"
               />
             </Form.Group>
-            <Button type="submit" className="mr-2 button">
+            <Button type="submit" className="me-2 button">
               Login
             </Button>
             <Button onClick={createNewId} className="button">

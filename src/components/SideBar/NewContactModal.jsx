@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { Modal, Form, Button } from "react-bootstrap";
+import { toast } from "react-toastify";
 import { useContacts } from "../../context/ContactsProvider";
 
 export default function NewContactModal({ closeModal }) {
@@ -12,6 +13,7 @@ export default function NewContactModal({ closeModal }) {
 
     if (!idRef.current.value || !nameRef.current.value) {
       console.log("add values");
+      toast.error("Add appropirate values !!");
       return;
     }
 
@@ -33,7 +35,7 @@ export default function NewContactModal({ closeModal }) {
               required
             />
           </Form.Group>
-          <Form.Group>
+          <Form.Group className="mt-3">
             <Form.Label>Name</Form.Label>
             <Form.Control
               type="text"

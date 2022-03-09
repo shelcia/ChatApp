@@ -22,10 +22,10 @@ export default function Sidebar() {
     <div className="sidebar">
       <Tab.Container activeKey={activeKey} onSelect={setActiveKey}>
         <Nav variant="tabs">
-          <Nav.Item>
+          <Nav.Item style={{ cursor: "pointer" }}>
             <Nav.Link eventKey={CONVERSATIONS_KEY}>Chats</Nav.Link>
           </Nav.Item>
-          <Nav.Item>
+          <Nav.Item style={{ cursor: "pointer" }}>
             <Nav.Link eventKey={CONTACTS_KEY}>Contacts</Nav.Link>
           </Nav.Item>
         </Nav>

@@ -12,7 +12,7 @@ export default function NewConversationModal({ closeModal }) {
   function handleSubmit(e) {
     e.preventDefault();
     if (selectedContactIds.length === 0) {
-      toast.error("Add atleast one contact");
+      toast.error("Add Atleast one contact");
       return;
     }
     createConversation(selectedContactIds);

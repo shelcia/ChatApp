@@ -8,6 +8,10 @@ https://www.youtube.com/watch?v=tBr-PybP_9c&t=4260s
 
 https://freee-chatapp.netlify.app/
 
+### Backend code at
+
+https://github.com/shelcia/freee-chat-app-backend
+
 ### Backend is deployed at
 
 https://whatsapp-clone-server-nodejs.herokuapp.com/

@@ -5,6 +5,7 @@ import Dashboard from "./pages/Dashboard";
 import { ContactsProvider } from "./context/ContactsProvider";
 import { ConversationsProvider } from "./context/ConversationsProvider";
 import { SocketProvider } from "./context/SocketProvider";
+import "react-toastify/dist/ReactToastify.css";
 import "./styles/style.css";
 
 const App = () => {

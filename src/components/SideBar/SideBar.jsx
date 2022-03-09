@@ -4,12 +4,11 @@ import Conversations from "./Conversations";
 import Contacts from "./Contacts";
 import NewContactModal from "./NewContactModal";
 import NewConversationModal from "./NewConversationModal";
-import "react-toastify/dist/ReactToastify.css";
 
 const CONVERSATIONS_KEY = "conversations";
 const CONTACTS_KEY = "contacts";
 
-export default function Sidebar() {
+const Sidebar = () => {
   const [activeKey, setActiveKey] = useState(CONVERSATIONS_KEY);
   const [modalOpen, setModalOpen] = useState(false);
   const conversationsOpen = activeKey === CONVERSATIONS_KEY;
@@ -60,4 +59,6 @@ export default function Sidebar() {
       </Modal>
     </div>
   );
-}
+};
+
+export default Sidebar;

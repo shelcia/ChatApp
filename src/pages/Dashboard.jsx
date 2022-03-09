@@ -1,7 +1,7 @@
 import React from "react";
 import { Row } from "react-bootstrap";
 import { useConversations } from "../context/ConversationsProvider";
-import Sidebar from "../components/sideBar/SideBar";
+import Sidebar from "../components/sidebar/Menu";
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
 import EmptyChat from "../components/chat/EmptyChat";

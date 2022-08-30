@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 
 const Navbar = ({ id }) => {
   const logout = (event) => {
@@ -11,7 +11,7 @@ const Navbar = ({ id }) => {
   };
 
   const copyText = () =>
-    toast.dark(
+    toast.success(
       "Your Id is copied to Clipboard. Now you can share it with your friends !!"
     );
 
@@ -19,7 +19,6 @@ const Navbar = ({ id }) => {
 
   return (
     <React.Fragment>
-      <ToastContainer />
       <nav
         className="navbar navbar-expand-sm bg-light mb-0 header d-flex justify-content-between px-3"
         style={{ height: "8vh" }}
@@ -67,7 +66,11 @@ export default Navbar;
 const ModalLogout = ({ logout, modalOpen, setModalOpen }) => {
   return (
     <React.Fragment>
-      <Modal show={modalOpen} onHide={() => setModalOpen(false)}>
+      <Modal
+        show={modalOpen}
+        onHide={() => setModalOpen(false)}
+        className="text-light"
+      >
         <Modal.Header closeButton>Logging Out !!!</Modal.Header>
         <Modal.Body>
           If you log out all your saved contacts and conversations will be

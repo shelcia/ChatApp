@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Modal, Form, Button } from "react-bootstrap";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 import { useContacts } from "../../context/ContactsProvider";
 
 export default function NewContactModal({ closeModal }) {

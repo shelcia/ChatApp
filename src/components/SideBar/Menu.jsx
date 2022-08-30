@@ -50,7 +50,7 @@ const Sidebar = () => {
         </Tab.Content>
       </Tab.Container>
 
-      <Modal show={modalOpen} onHide={closeModal}>
+      <Modal show={modalOpen} onHide={closeModal} className="text-light">
         {conversationsOpen ? (
           <NewConversationModal closeModal={closeModal} />
         ) : (
